@@ -34,3 +34,6 @@ package-lock.json
 scripts/Lib/
 scripts/Scripts/
 scripts/pyvenv.cfg
+
+# zip files
+*.zip
