@@ -1,8 +1,17 @@
 import json
 
 # Load the instances.json file
-with open('scripts/instances.json', 'r', encoding='utf-8') as f:
+with open('instances.json', 'r', encoding='utf-8') as f:
     data = json.load(f)
+
+# Ensure backward-compatibility with scraper output that writes
+# top-level 'raids' and 'dungeons' instead of wrapping them in
+# an 'instances' object. Create the wrapper if it's missing.
+if 'instances' not in data:
+    raids = data.get('raids', {})
+    dungeons = data.get('dungeons', {})
+    data = { 'instances': { 'raids': raids, 'dungeons': dungeons } }
+    print("Added missing 'instances' wrapper to JSON data.")
 
 # Iterate through all raids, NPCs, and spells
 for raid_name, raid_data in data['instances']['raids'].items():
@@ -36,7 +45,7 @@ for dungeon_name, dungeon_data in data['instances']['dungeons'].items():
                         spell['can_immune'] = True
 
 # Save the modified data back to the file
-with open('scripts/instances.json', 'w', encoding='utf-8') as f:
+with open('instances.json', 'w', encoding='utf-8') as f:
     json.dump(data, f, indent=4, ensure_ascii=False)
 
 print("Processing complete. All spells have been updated with the 'can_immune' flag.")

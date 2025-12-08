@@ -151,6 +151,7 @@ class WoWScraper:
             npc_data = {
                 'name': npc.get('name'),
                 'id': npc.get('id'),
+                'is_boss': npc.get('boss') == 1,
                 'spells': spells
             }
             npcs_with_spells.append(npc_data)
