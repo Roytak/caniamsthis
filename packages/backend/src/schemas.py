@@ -1,4 +1,5 @@
 from pydantic import BaseModel
+from typing import Optional
 
 
 class SpellBase(BaseModel):
@@ -9,7 +10,7 @@ class SpellBase(BaseModel):
 
 
 class Spell(SpellBase):
-    npc_id: int
+    npc_id: Optional[int] = None
 
     class Config:
         orm_mode = True
@@ -21,7 +22,9 @@ class NpcBase(BaseModel):
 
 
 class Npc(NpcBase):
-    instance_id: int
+    instance_id: Optional[int] = None
+    instance_ids: list[int] = []
+    is_boss: bool = False
     spells: list[Spell] = []
 
     class Config:
@@ -39,3 +42,15 @@ class Instance(InstanceBase):
 
     class Config:
         orm_mode = True
+
+
+class InstancesResponse(BaseModel):
+    dungeons: list[Instance]
+    raids: list[Instance]
+
+
+class SpellSearchResponse(BaseModel):
+    results: list[Spell]
+    total: int
+    page: int
+    limit: int

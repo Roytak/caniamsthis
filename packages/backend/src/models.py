@@ -1,7 +1,21 @@
-from sqlalchemy import Boolean, Column, ForeignKey, Integer, String
+from sqlalchemy import Boolean, Column, ForeignKey, Integer, String, Table
 from sqlalchemy.orm import relationship
 
 from .database import Base
+
+instance_npc_association = Table(
+    "instance_npc_association",
+    Base.metadata,
+    Column("instance_id", Integer, ForeignKey("instances.id")),
+    Column("npc_id", Integer, ForeignKey("npcs.id")),
+)
+
+npc_spell_association = Table(
+    "npc_spell_association",
+    Base.metadata,
+    Column("npc_id", Integer, ForeignKey("npcs.id")),
+    Column("spell_id", Integer, ForeignKey("spells.id")),
+)
 
 
 class Instance(Base):
@@ -11,7 +25,9 @@ class Instance(Base):
     name = Column(String, index=True)
     type = Column(String)
 
-    npcs = relationship("Npc", back_populates="instance")
+    npcs = relationship(
+        "Npc", secondary=instance_npc_association, back_populates="instances"
+    )
 
 
 class Npc(Base):
@@ -19,10 +35,22 @@ class Npc(Base):
 
     id = Column(Integer, primary_key=True, index=True)
     name = Column(String, index=True)
-    instance_id = Column(Integer, ForeignKey("instances.id"))
+    is_boss = Column(Boolean, default=False)
 
-    instance = relationship("Instance", back_populates="npcs")
-    spells = relationship("Spell", back_populates="npc")
+    instances = relationship(
+        "Instance", secondary=instance_npc_association, back_populates="npcs"
+    )
+    spells = relationship(
+        "Spell", secondary=npc_spell_association, back_populates="npcs"
+    )
+
+    @property
+    def instance_ids(self) -> list[int]:
+        """Return a list of related instance IDs for serialization."""
+        try:
+            return [inst.id for inst in self.instances]
+        except Exception:
+            return []
 
 
 class Spell(Base):
@@ -32,6 +60,7 @@ class Spell(Base):
     name = Column(String, index=True)
     school = Column(String)
     can_immune = Column(Boolean)
-    npc_id = Column(Integer, ForeignKey("npcs.id"))
 
-    npc = relationship("Npc", back_populates="spells")
+    npcs = relationship(
+        "Npc", secondary=npc_spell_association, back_populates="spells"
+    )

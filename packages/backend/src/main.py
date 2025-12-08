@@ -1,4 +1,4 @@
-from fastapi import Depends, FastAPI
+from fastapi import APIRouter, Depends, FastAPI, HTTPException
 from sqlalchemy.orm import Session
 
 from . import crud, models, schemas
@@ -7,6 +7,7 @@ from .database import SessionLocal, engine
 models.Base.metadata.create_all(bind=engine)
 
 app = FastAPI()
+router = APIRouter(prefix="/api")
 
 
 # Dependency
@@ -18,33 +19,42 @@ def get_db():
         db.close()
 
 
-@app.get("/instances/", response_model=list[schemas.Instance])
-def read_instances(skip: int = 0, limit: int = 100, db: Session = Depends(get_db)):
-    instances = crud.get_instances(db, skip=skip, limit=limit)
-    return instances
+@router.get("/instances/", response_model=schemas.InstancesResponse)
+def read_instances(db: Session = Depends(get_db)):
+    dungeons = crud.get_dungeons(db, skip=0, limit=0)
+    raids = crud.get_raids(db, skip=0, limit=0)
+    return {"dungeons": dungeons, "raids": raids}
 
 
-@app.get("/raids/", response_model=list[schemas.Instance])
-def read_raids(skip: int = 0, limit: int = 100, db: Session = Depends(get_db)):
-    raids = crud.get_raids(db, skip=skip, limit=limit)
-    return raids
+@router.get("/spells/search", response_model=schemas.SpellSearchResponse)
+def search_spells(
+    query: str, page: int = 1, limit: int = 20, db: Session = Depends(get_db)
+):
+    spells, total = crud.search_spells(db, query, page, limit)
+    return {"results": spells, "total": total, "page": page, "limit": limit}
 
 
-@app.get("/dungeons/", response_model=list[schemas.Instance])
-def read_dungeons(skip: int = 0, limit: int = 100, db: Session = Depends(get_db)):
-    dungeons = crud.get_dungeons(db, skip=skip, limit=limit)
-    return dungeons
+@router.get("/dungeons/{id}", response_model=schemas.Instance)
+def get_dungeon(id: int, db: Session = Depends(get_db)):
+    dungeon = crud.get_instance_by_id_and_type(db, id, "dungeons")
+    if not dungeon:
+        raise HTTPException(status_code=404, detail="Dungeon not found")
+    return dungeon
 
 
-@app.get("/instances/{instance_id}", response_model=schemas.Instance)
-def read_instance(instance_id: int, db: Session = Depends(get_db)):
-    db_instance = crud.get_instance(db, instance_id=instance_id)
-    if db_instance is None:
+@router.get("/raids/{id}", response_model=schemas.Instance)
+def get_raid(id: int, db: Session = Depends(get_db)):
+    raid = crud.get_instance_by_id_and_type(db, id, "raids")
+    if not raid:
+        raise HTTPException(status_code=404, detail="Raid not found")
+    return raid
+
+
+@router.get("/instances/{id}", response_model=schemas.Instance)
+def get_instance(id: int, db: Session = Depends(get_db)):
+    instance = crud.get_instance(db, id)
+    if not instance:
         raise HTTPException(status_code=404, detail="Instance not found")
-    return db_instance
+    return instance
 
-
-@app.get("/spells/", response_model=list[schemas.Spell])
-def read_spells(skip: int = 0, limit: int = 100, db: Session = Depends(get_db)):
-    spells = crud.get_spells(db, skip=skip, limit=limit)
-    return spells
+app.include_router(router)

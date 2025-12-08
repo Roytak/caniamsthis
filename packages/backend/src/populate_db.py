@@ -1,48 +1,63 @@
 import json
-from database import SessionLocal, Instance, Npc, Spell
+from pathlib import Path
+from .database import SessionLocal
+from . import models
 
-def populate_db():
-    db = SessionLocal()
-    with open('../../scripts/instances.json', 'r') as f:
+def populate_db(instances_path: str = "C:\\Users\\mNoCZ\\Documents\\FIT\\caniamsthis\\scripts\\instances.json") -> None:
+    inst_path = Path(__file__).parent.joinpath(instances_path).resolve()
+    if not inst_path.exists():
+        raise FileNotFoundError(f"Instances file not found: {inst_path}")
+
+    with inst_path.open("r", encoding="utf-8") as f:
         data = json.load(f)
 
-    for instance_type, instances in data['instances'].items():
-        for instance_name, instance_data in instances.items():
-            instance = db.query(Instance).filter(Instance.id == instance_data['id']).first()
-            if not instance:
-                instance = Instance(
-                    id=instance_data['id'],
-                    name=instance_name,
-                    type=instance_type
-                )
-                db.add(instance)
-                db.commit()
+    instances_dict = data['instances']
 
-            for npc_data in instance_data['npcs']:
-                npc = db.query(Npc).filter(Npc.id == npc_data['id']).first()
-                if not npc:
-                    npc = Npc(
-                        id=npc_data['id'],
-                        name=npc_data['name'],
-                        instance_id=instance.id
-                    )
-                    db.add(npc)
-                    db.commit()
+    session = SessionLocal()
+    try:
+        for inst_type, insts in instances_dict.items():
+            for inst_name, inst_data in insts.items():
+                inst_id = inst_data.get('id')
+                if inst_id is None:
+                    continue
+                instance = session.query(models.Instance).filter(models.Instance.id == inst_id).first()
+                if not instance:
+                    instance = models.Instance(id=inst_id, name=inst_name, type=inst_type)
+                    session.add(instance)
+                    session.commit()
 
-                for spell_data in npc_data['spells']:
-                    spell = db.query(Spell).filter(Spell.id == spell_data['id']).first()
-                    if not spell:
-                        spell = Spell(
-                            id=spell_data['id'],
-                            name=spell_data['name'],
-                            school=spell_data['school'],
-                            can_immune=spell_data['can_immune'],
-                            npc_id=npc.id
-                        )
-                        db.add(spell)
-                        db.commit()
-    db.close()
+                for npc_data in inst_data.get('npcs', []):
+                    npc_id = npc_data.get('id')
+                    if npc_id is None:
+                        continue
+                    npc = session.query(models.Npc).filter(models.Npc.id == npc_id).first()
+                    if not npc:
+                        npc = models.Npc(id=npc_id, name=npc_data.get('name'), is_boss=npc_data.get('is_boss', False))
+                        session.add(npc)
+                        session.commit()
 
-if __name__ == "__main__":
-    populate_db()
-    print("Database populated successfully.")
+                    # ensure association between instance and npc
+                    if npc not in instance.npcs:
+                        instance.npcs.append(npc)
+                        session.commit()
+
+                    for spell_data in npc_data.get('spells', []):
+                        sid = spell_data.get('id')
+                        if sid is None:
+                            continue
+                        spell = session.query(models.Spell).filter(models.Spell.id == sid).first()
+                        if not spell:
+                            can_immune = spell_data.get('can_immune')
+                            if can_immune is None:
+                                # fall back to previous flags-based heuristic
+                                can_immune = "Immune" not in spell_data.get('flags', [])
+                            spell = models.Spell(id=sid, name=spell_data.get('name'), school=spell_data.get('school'), can_immune=bool(can_immune))
+                            session.add(spell)
+                            session.commit()
+
+                        # ensure association between npc and spell
+                        if spell not in npc.spells:
+                            npc.spells.append(spell)
+                            session.commit()
+    finally:
+        session.close()
