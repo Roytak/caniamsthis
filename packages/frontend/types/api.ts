@@ -16,7 +16,9 @@ export interface NPC {
   id: string
   name: string
   iconUrl?: string
-  role: "Boss" | "Elite" | "Trash"
+  // New authoritative flag from backend indicating boss status
+  is_boss?: boolean
+  role?: "Boss" | "Elite" | "Trash"
   health?: number
   level?: number
   instanceId: string
