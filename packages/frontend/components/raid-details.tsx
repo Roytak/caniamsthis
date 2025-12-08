@@ -46,7 +46,7 @@ export function RaidDetails({ raidId }: RaidDetailsProps) {
     )
   }
 
-  const bosses = raid.npcs.filter((npc) => npc.role === "Boss")
+  const bosses = raid.npcs.filter((npc) => Boolean(npc.is_boss))
 
   return (
     <div>
@@ -88,7 +88,7 @@ export function RaidDetails({ raidId }: RaidDetailsProps) {
                         variant="outline"
                         className="text-xs border-yellow-700/50 text-yellow-300 bg-yellow-900/20"
                       >
-                        {boss.role}
+                        {boss.is_boss ? "Boss" : boss.role ?? "Boss"}
                       </Badge>
                       {boss.level && <span className="text-xs text-green-300/50">Level {boss.level}</span>}
                     </CardDescription>

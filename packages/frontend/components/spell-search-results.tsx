@@ -110,14 +110,14 @@ export function SpellSearchResults({ results, isLoading }: SpellSearchResultsPro
                     <Badge
                       variant="outline"
                       className={`text-xs ${
-                        result.npc.role === "Boss"
+                        result.npc.is_boss
                           ? "border-yellow-700/50 text-yellow-300 bg-yellow-900/20"
                           : result.npc.role === "Elite"
                             ? "border-red-700/50 text-red-300 bg-red-900/20"
                             : "border-gray-700/50 text-gray-300 bg-gray-900/20"
                       }`}
                     >
-                      {result.npc.role}
+                      {result.npc.is_boss ? "Boss" : result.npc.role ?? "Trash"}
                     </Badge>
                   </div>
                   <div className="flex items-center gap-1">

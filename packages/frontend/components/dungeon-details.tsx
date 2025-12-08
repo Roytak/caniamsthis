@@ -12,27 +12,36 @@ import { LoadingSpinner } from "./loading-spinner"
 
 interface DungeonDetailsProps {
   dungeonId: string
+  initialDungeon?: Instance | null
 }
 
-export function DungeonDetails({ dungeonId }: DungeonDetailsProps) {
-  const [dungeon, setDungeon] = useState<Instance | null>(null)
+export function DungeonDetails({ dungeonId, initialDungeon }: DungeonDetailsProps) {
+  const [dungeon, setDungeon] = useState<Instance | null>(initialDungeon ?? null)
   const [showBossesOnly, setShowBossesOnly] = useState(true)
-  const [isLoading, setIsLoading] = useState(true)
+  // If we have an initial dungeon from the server, don't show the
+  // loading spinner; otherwise show it until the client fetch completes.
+  const [isLoading, setIsLoading] = useState<boolean>(initialDungeon ? false : true)
 
   useEffect(() => {
+    if (initialDungeon) return // already have data from server
+
+    let cancelled = false
     const loadDungeon = async () => {
       try {
         const data = await WoWAPIClient.getDungeon(dungeonId)
-        setDungeon(data)
+        if (!cancelled) setDungeon(data)
       } catch (error) {
         console.error("Failed to load dungeon:", error)
       } finally {
-        setIsLoading(false)
+        if (!cancelled) setIsLoading(false)
       }
     }
 
     loadDungeon()
-  }, [dungeonId])
+    return () => {
+      cancelled = true
+    }
+  }, [dungeonId, initialDungeon])
 
   if (isLoading) {
     return <LoadingSpinner />
@@ -49,8 +58,8 @@ export function DungeonDetails({ dungeonId }: DungeonDetailsProps) {
   }
 
   const filteredNPCs = showBossesOnly
-    ? dungeon.npcs.filter((npc) => npc.role === "Boss")
-    : dungeon.npcs.filter((npc) => npc.role !== "Boss")
+    ? dungeon.npcs.filter((npc) => Boolean(npc.is_boss))
+    : dungeon.npcs.filter((npc) => !Boolean(npc.is_boss))
 
   return (
     <div>
@@ -112,7 +121,7 @@ export function DungeonDetails({ dungeonId }: DungeonDetailsProps) {
                     <CardTitle className="text-green-300">{npc.name}</CardTitle>
                     <CardDescription className="flex items-center gap-2">
                       <Badge variant="outline" className="text-xs border-green-900/30 text-green-400/70">
-                        {npc.role}
+                        {npc.is_boss ? "Boss" : npc.role ?? "Trash"}
                       </Badge>
                       {npc.level && <span className="text-xs text-green-300/50">Level {npc.level}</span>}
                     </CardDescription>
@@ -150,6 +159,34 @@ export function DungeonDetails({ dungeonId }: DungeonDetailsProps) {
                           >
                             {spell.type}
                           </Badge>
+                          {/** Display school if provided by backend (e.g., "Arcane", "Fire", etc.) */}
+                          {((spell as any).school || (spell as any).school === "") && (
+                            (() => {
+                              const school = (spell as any).school
+                              const schoolClass =
+                                school === "Physical"
+                                  ? "bg-red-900/50 text-red-300"
+                                  : school === "Arcane"
+                                    ? "bg-indigo-900/50 text-indigo-300"
+                                    : school === "Fire"
+                                      ? "bg-orange-900/50 text-orange-300"
+                                      : school === "Frost"
+                                        ? "bg-blue-900/50 text-blue-300"
+                                        : school === "Nature"
+                                          ? "bg-emerald-900/50 text-emerald-300"
+                                          : school === "Holy"
+                                            ? "bg-yellow-900/50 text-yellow-300"
+                                            : school === "Shadow"
+                                              ? "bg-purple-900/50 text-purple-300"
+                                              : "bg-gray-800/50 text-gray-300"
+
+                              return (
+                                <Badge variant="outline" className={`${schoolClass} text-xs ml-1`}>
+                                  {school}
+                                </Badge>
+                              )
+                            })()
+                          )}
                         </div>
                         <p className="text-sm text-green-300/70">{spell.description}</p>
                         {(spell.damage || spell.castTime || spell.cooldown) && (
@@ -160,16 +197,23 @@ export function DungeonDetails({ dungeonId }: DungeonDetailsProps) {
                           </div>
                         )}
                       </div>
-                      <Badge
-                        variant={spell.canImmune ? "default" : "destructive"}
-                        className={
-                          spell.canImmune
-                            ? "bg-green-900/50 text-green-300 border-green-700/50"
-                            : "bg-red-900/50 text-red-300 border-red-700/50"
-                        }
-                      >
-                        {spell.canImmune ? "✓ Can AMS" : "✗ Cannot AMS"}
-                      </Badge>
+                      {(() => {
+                        // Backend may send `can_immune` (snake_case) or `canImmune` (camelCase).
+                        const canImmune = Boolean((spell as any).can_immune ?? (spell as any).canImmune)
+
+                        return (
+                          <Badge
+                            variant={canImmune ? "default" : "destructive"}
+                            className={
+                              canImmune
+                                ? "bg-green-900/50 text-green-300 border-green-700/50"
+                                : "bg-red-900/50 text-red-300 border-red-700/50"
+                            }
+                          >
+                            {canImmune ? "✓ Can AMS" : "✗ Cannot AMS"}
+                          </Badge>
+                        )
+                      })()}
                     </div>
                   ))}
                 </div>

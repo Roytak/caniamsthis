@@ -85,7 +85,7 @@ export function RaidsList() {
             </CardHeader>
             <CardContent>
               <p className="text-sm text-green-300/70 mb-4">
-                {raid.npcs.filter((npc) => npc.role === "Boss").length} bosses with{" "}
+                {raid.npcs.filter((npc) => Boolean(npc.is_boss)).length} bosses with{" "}
                 {raid.npcs.reduce((total, npc) => total + npc.spells.length, 0)} spells
               </p>
               <Link href={`/raids/${raid.id}`}>
