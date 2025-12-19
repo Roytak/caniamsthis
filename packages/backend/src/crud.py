@@ -3,7 +3,6 @@ from sqlalchemy import func
 
 from . import models, schemas
 
-
 def get_instance(db: Session, id: int):
     return db.query(models.Instance).filter(models.Instance.id == id).first()
 

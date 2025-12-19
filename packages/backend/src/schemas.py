@@ -26,15 +26,18 @@ class Npc(NpcBase):
     instance_ids: list[int] = []
     is_boss: bool = False
     spells: list[Spell] = []
+    image_url: Optional[str] = None
 
     class Config:
         orm_mode = True
+        populate_by_name = True
 
 
 class InstanceBase(BaseModel):
     id: int
     name: str
     type: str
+    image_filename: Optional[str] = None
 
 
 class Instance(InstanceBase):

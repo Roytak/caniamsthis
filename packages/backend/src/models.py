@@ -24,6 +24,7 @@ class Instance(Base):
     id = Column(Integer, primary_key=True, index=True)
     name = Column(String, index=True)
     type = Column(String)
+    image_filename = Column(String, nullable=True)
 
     npcs = relationship(
         "Npc", secondary=instance_npc_association, back_populates="instances"
@@ -36,6 +37,7 @@ class Npc(Base):
     id = Column(Integer, primary_key=True, index=True)
     name = Column(String, index=True)
     is_boss = Column(Boolean, default=False)
+    image_url = Column(String, nullable=True)
 
     instances = relationship(
         "Instance", secondary=instance_npc_association, back_populates="npcs"

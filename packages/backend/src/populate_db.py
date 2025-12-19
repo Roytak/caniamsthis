@@ -3,6 +3,17 @@ from pathlib import Path
 from .database import SessionLocal
 from . import models
 
+INSTANCE_TO_IMAGE = {
+    "Manaforge Omega": "manaforge-omega.jpg",
+    "Ara-Kara, City of Echoes": "ara-kara-city-of-echoes.jpg",
+    "The Dawnbreaker": "the-dawnbreaker.jpg",
+    "Priory of the Sacred Flame": "priory-of-the-sacred-flame.jpg",
+    "Operation: Floodgate": "operation-floodgate.jpg",
+    "Eco-Dome Al'dani": "eco-dome-aldani.jpg",
+    "Halls of Atonement": "halls-of-atonement.jpg",
+    "Tazavesh, the Veiled Market": "tazavesh-the-veiled-market.jpg",
+}
+
 def populate_db(instances_path: str = "C:\\Users\\mNoCZ\\Documents\\FIT\\caniamsthis\\scripts\\instances.json") -> None:
     inst_path = Path(__file__).parent.joinpath(instances_path).resolve()
     if not inst_path.exists():
@@ -22,7 +33,7 @@ def populate_db(instances_path: str = "C:\\Users\\mNoCZ\\Documents\\FIT\\caniams
                     continue
                 instance = session.query(models.Instance).filter(models.Instance.id == inst_id).first()
                 if not instance:
-                    instance = models.Instance(id=inst_id, name=inst_name, type=inst_type)
+                    instance = models.Instance(id=inst_id, name=inst_name, type=inst_type, image_filename=INSTANCE_TO_IMAGE.get(inst_name, None))
                     session.add(instance)
                     session.commit()
 
@@ -32,7 +43,8 @@ def populate_db(instances_path: str = "C:\\Users\\mNoCZ\\Documents\\FIT\\caniams
                         continue
                     npc = session.query(models.Npc).filter(models.Npc.id == npc_id).first()
                     if not npc:
-                        npc = models.Npc(id=npc_id, name=npc_data.get('name'), is_boss=npc_data.get('is_boss', False))
+                        npc = models.Npc(id=npc_id, name=npc_data.get('name'),
+                                         is_boss=npc_data.get('is_boss', False), image_url=npc_data.get('image_url', None))
                         session.add(npc)
                         session.commit()
 
