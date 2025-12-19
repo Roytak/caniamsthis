@@ -3,21 +3,22 @@ import aiohttp
 import re
 import json
 import bs4 as BeautifulSoup
+import sys
+import argparse
 from typing import Dict, List, Tuple, Any
 
 RAIDS = {
-    "Liberation of Undermine": 15522,
+    "Manaforge Omega": 16178,
 }
 
 DUNGEONS = {
-    "Operation: Floodgate": 15452,
-    "Operation: Mechagon": 10225,
-    "Theater of Pain": 12841,
-    "The MOTHERLODE!!": 8064,
+    "Ara-Kara, City of Echoes": 15093,
+    "The Dawnbreaker": 14971,
     "Priory of the Sacred Flame": 14954,
-    "The Rookery": 14938,
-    "Darkflame Cleft": 14882,
-    "Cinderbrew Meadery": 15103
+    "Operation: Floodgate": 15452,
+    "Eco-Dome Al'dani": 16104,
+    "Halls of Atonement": 12831,
+    "Tazavesh, the Veiled Market": 13577,
 }
 
 class WoWScraper:
@@ -104,6 +105,88 @@ class WoWScraper:
         unique_spells = {spell['id']: spell for spell in spells_with_details}.values()
         return list(unique_spells)
 
+    def get_screenshot_url(self, html_content, npc_name):
+        image_id = None
+
+        # STRATEGY 1: Direct ID Extraction (Most Robust)
+        # Instead of parsing the full complex JSON, we just grab the first "id"
+        # inside the lv_screenshots definition. This bypasses JSON syntax errors.
+        # We verify it looks like: var lv_screenshots = [{"id":12345
+
+        # Matches: var lv_screenshots = [{"id":12345
+        simple_pattern = r'var\s+lv_screenshots\s*=\s*\[\{\"id\":(\d+)'
+        match = re.search(simple_pattern, html_content)
+
+        if match:
+            image_id = match.group(1)
+
+        # STRATEGY 2: Full JSON Parsing (Fallback for "Sticky" logic)
+        # Only necessary if you specifically need the "sticky" image over the first one.
+        if not image_id:
+            try:
+                # Capture everything from 'var lv_screenshots = [' until the closing '];'
+                # We use a greedy match up to the specific variable terminator to handle nested brackets
+                json_pattern = r'var\s+lv_screenshots\s*=\s*(\[.*?\]);'
+                m = re.search(json_pattern, html_content, re.DOTALL)
+
+                if m:
+                    data = json.loads(m.group(1))
+                    # Find sticky, or default to first
+                    if data:
+                        chosen = next((s for s in data if s.get('sticky') == 1), data[0])
+                        image_id = chosen.get('id')
+            except (json.JSONDecodeError, AttributeError):
+                pass
+
+        # URL CONSTRUCTION
+        if image_id:
+            # Create a simple slug if name is provided, otherwise simple fallback
+            if npc_name:
+                slug = re.sub(r"[^a-z0-9]+", "-", npc_name.lower()).strip("-")
+                return f"https://wow.zamimg.com/uploads/screenshots/normal/{image_id}-{slug}.jpg"
+            else:
+                # Wowhead images often load with just the ID, or you can use a generic slug
+                return f"https://wow.zamimg.com/uploads/screenshots/normal/{image_id}.jpg"
+
+        return ""
+
+    def parse_npc_image(self, html_content: str, npc_name: str | None = None) -> str:
+        """Parse NPC image URL from HTML content"""
+        if not html_content:
+            return ""
+
+        soup = BeautifulSoup.BeautifulSoup(html_content, 'html.parser')
+
+        # 1) Prefer Open Graph meta image from <head>
+        og_image = soup.find('meta', attrs={'property': 'og:image'})
+        if og_image:
+            content = og_image.get('content')
+            if content and content != "https://wow.zamimg.com/images/logos/share-icon.png":
+                return content
+
+        # 2) Fallback to secure_url variant or Twitter image
+        og_image_secure = soup.find('meta', attrs={'property': 'og:image:secure_url'})
+        if og_image_secure:
+            content = og_image_secure.get('content')
+            if content and content != "https://wow.zamimg.com/images/logos/share-icon.png":
+                return content
+
+        twitter_image = soup.find('meta', attrs={'name': 'twitter:image'})
+        if twitter_image:
+            content = twitter_image.get('content')
+            if content and content != "https://wow.zamimg.com/images/logos/share-icon.png":
+                return content
+
+        # 3) Final fallback: extract screenshot id from inline JS and forge URL
+        url = self.get_screenshot_url(html_content, npc_name)
+        return url
+
+    async def scrape_npc_image(self, session: aiohttp.ClientSession, npc_id: int, npc_name: str | None = None) -> str:
+        """Scrape NPC image URL asynchronously"""
+        url = f"https://www.wowhead.com/npc={npc_id}"
+        html_content = await self.get_content(session, url)
+        return self.parse_npc_image(html_content, npc_name)
+
     def parse_npcs_from_html(self, html_content: str, boss_only: bool = False) -> List[Dict[str, Any]]:
         """Parse NPC data from HTML content"""
         if not html_content:
@@ -144,15 +227,18 @@ class WoWScraper:
                 task = self.scrape_spells(session, npc_id)
                 npc_tasks.append((npc, task))
 
-        # Execute all NPC spell scraping concurrently
+        # Execute all NPC spell scraping and image scraping concurrently
         npcs_with_spells = []
         for npc, task in npc_tasks:
             spells = await task
+            npc_id = npc.get('id')
+            image_url = await self.scrape_npc_image(session, npc_id, npc.get('name')) if npc_id else ""
             npc_data = {
                 'name': npc.get('name'),
-                'id': npc.get('id'),
+                'id': npc_id,
                 'is_boss': npc.get('boss') == 1,
-                'spells': spells
+                'spells': spells,
+                'image_url': image_url
             }
             npcs_with_spells.append(npc_data)
             print(f"NPC: {npc_data['name']} (ID: {npc_data['id']}) - {len(spells)} spells")
@@ -224,5 +310,134 @@ async def main():
 
     print("Scraping completed successfully!")
 
+
+def refine():
+    """Refine the instances.json file by adding can_immune flags to spells"""
+    # Load the instances.json file
+    with open('instances.json', 'r', encoding='utf-8') as f:
+        data = json.load(f)
+
+    # Ensure backward-compatibility with scraper output that writes
+    # top-level 'raids' and 'dungeons' instead of wrapping them in
+    # an 'instances' object. Create the wrapper if it's missing.
+    if 'instances' not in data:
+        raids = data.get('raids', {})
+        dungeons = data.get('dungeons', {})
+        data = { 'instances': { 'raids': raids, 'dungeons': dungeons } }
+        print("Added missing 'instances' wrapper to JSON data.")
+
+    # Spell names to remove from both raids and dungeons
+    spells_to_remove = {
+        "Radiant Focus",
+        "Blinding Sleet",
+        "Bursting Shot",
+        "Encounter Event",
+        "Shattered Essence",
+        "Meerah's Jukebox",
+    }
+
+    # NPC names to remove from dungeons
+    npcs_to_remove_from_dungeons = {
+        "Void Emissary",
+        "Orb of Ascendance"
+    }
+
+    def should_remove_spell(spell_name: str) -> bool:
+        """Check if a spell should be removed"""
+        if not isinstance(spell_name, str):
+            return False
+        return spell_name in spells_to_remove
+
+    def remove_duplicate_spells(spells: List[Dict]) -> List[Dict]:
+        """Remove duplicate spells based on spell ID"""
+        seen = {}
+        for spell in spells:
+            spell_name = spell.get('name')
+            if spell_name not in seen:
+                seen[spell_name] = spell
+        return list(seen.values())
+
+    # Iterate through all raids, NPCs, and spells
+    for raid_name, raid_data in data['instances']['raids'].items():
+        if 'npcs' in raid_data:
+            for npc in raid_data['npcs']:
+                if 'spells' in npc:
+                    # Filter out unwanted spells and remove duplicates
+                    npc['spells'] = [
+                        spell for spell in npc['spells']
+                        if not should_remove_spell(spell.get('name'))
+                    ]
+                    npc['spells'] = remove_duplicate_spells(npc['spells'])
+
+                    for spell in npc['spells']:
+                        # Check if school is "Physical" or flags contain "Unaffected by invulnerability"
+                        school_is_physical = spell.get('school') == 'Physical'
+                        has_unaffected_flag = 'Unaffected by invulnerability' in spell.get('flags', [])
+
+                        # Set can_immune based on the conditions
+                        if school_is_physical or has_unaffected_flag:
+                            spell['can_immune'] = False
+                        else:
+                            spell['can_immune'] = True
+
+            # Remove NPCs with 0 spells
+            raid_data['npcs'] = [
+                npc for npc in raid_data['npcs']
+                if npc.get('spells') and len(npc['spells']) > 0
+            ]
+
+    for dungeon_name, dungeon_data in data['instances']['dungeons'].items():
+        if 'npcs' in dungeon_data:
+            # First, remove specific NPCs by name
+            dungeon_data['npcs'] = [
+                npc for npc in dungeon_data['npcs']
+                if npc.get('name') not in npcs_to_remove_from_dungeons
+            ]
+
+            for npc in dungeon_data['npcs']:
+                if 'spells' in npc:
+                    # Filter out unwanted spells and remove duplicates
+                    npc['spells'] = [
+                        spell for spell in npc['spells']
+                        if not should_remove_spell(spell.get('name'))
+                    ]
+                    npc['spells'] = remove_duplicate_spells(npc['spells'])
+
+                    for spell in npc['spells']:
+                        # Check if school is "Physical" or flags contain "Unaffected by invulnerability"
+                        school_is_physical = spell.get('school') == 'Physical'
+                        has_unaffected_flag = 'Unaffected by invulnerability' in spell.get('flags', [])
+
+                        # Set can_immune based on the conditions
+                        if school_is_physical or has_unaffected_flag:
+                            spell['can_immune'] = False
+                        else:
+                            spell['can_immune'] = True
+
+            # Remove NPCs that now have zero spells
+            dungeon_data['npcs'] = [
+                npc for npc in dungeon_data['npcs']
+                if npc.get('spells') and len(npc['spells']) > 0
+            ]
+
+    # Save the modified data back to the file
+    with open('instances.json', 'w', encoding='utf-8') as f:
+        json.dump(data, f, indent=4, ensure_ascii=False)
+
+    print("Processing complete. All spells have been updated with the 'can_immune' flag.")
+
+
+async def main_with_scrape():
+    """Main entry point that optionally scrapes then refines"""
+    await main()
+    refine()
+
 if __name__ == "__main__":
-    asyncio.run(main())
+    parser = argparse.ArgumentParser(description='Scrape and refine WoW instance data')
+    parser.add_argument('--scrape', action='store_true', help='Scrape data from Wowhead (default: only refine existing data)')
+    args = parser.parse_args()
+
+    if args.scrape:
+        asyncio.run(main_with_scrape())
+    else:
+        refine()
