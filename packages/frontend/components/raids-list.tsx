@@ -69,7 +69,7 @@ export function RaidsList() {
             <CardHeader>
               <div className="flex items-center gap-4">
                 <Image
-                  src={raid.iconUrl || `/placeholder.svg?height=64&width=64&query=${raid.name}`}
+                  src={raid.image_filename ? `/images/instances/${raid.image_filename}` : `/placeholder.svg?height=64&width=64&query=${raid.name}`}
                   alt={raid.name}
                   width={64}
                   height={64}

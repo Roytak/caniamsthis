@@ -63,7 +63,10 @@ export default function HomePage() {
   }, [debouncedSearchTerm, searchSpells])
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-gray-900 via-gray-800 to-black text-green-100">
+    <div
+      className="min-h-screen bg-gradient-to-b from-gray-900 via-gray-800 to-black text-green-100"
+      suppressHydrationWarning
+    >
       {/* Header */}
       <header className="border-b border-green-900/30 bg-black/50 backdrop-blur-sm">
         <div className="container mx-auto px-4 py-6">
@@ -147,7 +150,7 @@ export default function HomePage() {
                     >
                       <div className="flex items-center gap-3">
                         <Image
-                          src={dungeon.iconUrl || `/placeholder.svg?height=32&width=32&query=${dungeon.name}`}
+                          src={dungeon.image_filename ? `/images/instances/${dungeon.image_filename}` : `/placeholder.svg?height=32&width=32&query=${dungeon.name}`}
                           alt={dungeon.name}
                           width={32}
                           height={32}
@@ -192,7 +195,7 @@ export default function HomePage() {
                     >
                       <div className="flex items-center gap-3">
                         <Image
-                          src={raid.iconUrl || `/placeholder.svg?height=32&width=32&query=${raid.name}`}
+                          src={raid.image_filename ? `/images/instances/${raid.image_filename}` : `/placeholder.svg?height=32&width=32&query=${raid.name}`}
                           alt={raid.name}
                           width={32}
                           height={32}

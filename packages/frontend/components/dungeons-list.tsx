@@ -69,7 +69,7 @@ export function DungeonsList() {
             <CardHeader>
               <div className="flex items-center gap-4">
                 <Image
-                  src={dungeon.iconUrl || `/placeholder.svg?height=64&width=64&query=${dungeon.name}`}
+                  src={dungeon.image_filename ? `/images/instances/${dungeon.image_filename}` : `/placeholder.svg?height=64&width=64&query=${dungeon.name}`}
                   alt={dungeon.name}
                   width={64}
                   height={64}
@@ -77,9 +77,6 @@ export function DungeonsList() {
                 />
                 <div>
                   <CardTitle className="text-green-300">{dungeon.name}</CardTitle>
-                  <CardDescription className="text-green-200/70">
-                    {dungeon.expansion} • {dungeon.level}
-                  </CardDescription>
                 </div>
               </div>
             </CardHeader>

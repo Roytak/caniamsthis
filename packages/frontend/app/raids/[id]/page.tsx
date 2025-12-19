@@ -1,4 +1,4 @@
-import { Suspense } from "react";
+import { Suspense, use } from "react";
 import { notFound } from "next/navigation";
 import { RaidDetails } from "@/components/raid-details";
 import { PageHeader } from "@/components/page-header";
@@ -17,7 +17,8 @@ export async function generateStaticParams() {
 }
 
 export async function generateMetadata({ params }: RaidPageProps) {
-  const raid = await WoWAPIClient.getRaid(params.id);
+  const { id } = await params;
+  const raid = await WoWAPIClient.getRaid(id);
 
   if (!raid) {
     return {

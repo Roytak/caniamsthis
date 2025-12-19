@@ -1,11 +1,10 @@
 import { Card, CardContent } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
-import { Shield, Sword, Crown } from "lucide-react"
-import Image from "next/image"
-import type { SearchResult } from "@/types/api"
+import { Shield } from "lucide-react"
+import type { Spell } from "@/types/api"
 
 interface SpellSearchResultsProps {
-  results: SearchResult[]
+  results: Spell[]
   isLoading: boolean
 }
 
@@ -45,94 +44,66 @@ export function SpellSearchResults({ results, isLoading }: SpellSearchResultsPro
 
   return (
     <div className="space-y-4">
-      {results.map((result, index) => (
+      {results.map((spell, index) => (
         <Card
-          key={`${result.spell.id}-${index}`}
+          key={`${spell.id}-${index}`}
           className="bg-gray-800/50 border-green-900/30 hover:border-green-700/50 transition-colors"
         >
           <CardContent className="p-4">
             <div className="flex items-start gap-4">
               {/* Spell Icon */}
-              <div className="relative">
-                <Image
-                  src={result.spell.iconUrl || `/placeholder.svg?height=48&width=48&query=spell+${result.spell.name}`}
-                  alt={result.spell.name}
-                  width={48}
-                  height={48}
-                  className="rounded border border-green-900/30"
-                />
-                <div className="absolute inset-0 rounded bg-green-400/10"></div>
+              <div className="relative flex-shrink-0">
+                {spell.id && (
+                  <a
+                    href={`https://www.wowhead.com/spell=${spell.id}`}
+                    data-wowhead={`spell=${spell.id}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="block"
+                  >
+                    <span className="sr-only">{spell.name}</span>
+                  </a>
+                )}
               </div>
 
               <div className="flex-1 min-w-0">
                 {/* Spell Info */}
                 <div className="flex items-center gap-2 mb-2">
-                  <h3 className="font-semibold text-green-200 truncate">{result.spell.name}</h3>
+                  <h3 className="font-semibold text-green-200 truncate">{spell.name}</h3>
                   <Badge
-                    variant={result.spell.type === "Magic" ? "default" : "secondary"}
+                    variant={spell.type === "Magic" ? "default" : "secondary"}
                     className={
-                      result.spell.type === "Magic"
+                      spell.type === "Magic"
                         ? "bg-blue-900/50 text-blue-300"
-                        : result.spell.type === "Physical"
+                        : spell.type === "Physical"
                           ? "bg-red-900/50 text-red-300"
-                          : result.spell.type === "Disease"
+                          : spell.type === "Disease"
                             ? "bg-yellow-900/50 text-yellow-300"
                             : "bg-purple-900/50 text-purple-300"
                     }
                   >
-                    {result.spell.type}
+                    {spell.type}
                   </Badge>
                   <Badge
-                    variant={result.spell.canImmune ? "default" : "destructive"}
+                    variant={spell.canImmune ? "default" : "destructive"}
                     className={
-                      result.spell.canImmune
+                      spell.canImmune
                         ? "bg-green-900/50 text-green-300 border-green-700/50"
                         : "bg-red-900/50 text-red-300 border-red-700/50"
                     }
                   >
-                    {result.spell.canImmune ? "✓ Can AMS" : "✗ Cannot AMS"}
+                    {spell.canImmune ? "✓ Can AMS" : "✗ Cannot AMS"}
                   </Badge>
                 </div>
 
-                <p className="text-sm text-green-300/70 mb-3">{result.spell.description}</p>
-
-                {/* NPC and Instance Info */}
-                <div className="flex items-center gap-4 text-xs text-green-300/60">
-                  <div className="flex items-center gap-1">
-                    <Image
-                      src={result.npc.iconUrl || `/placeholder.svg?height=20&width=20&query=npc+${result.npc.name}`}
-                      alt={result.npc.name}
-                      width={20}
-                      height={20}
-                      className="rounded"
-                    />
-                    <span>{result.npc.name}</span>
-                    <Badge
-                      variant="outline"
-                      className={`text-xs ${
-                        result.npc.is_boss
-                          ? "border-yellow-700/50 text-yellow-300 bg-yellow-900/20"
-                          : result.npc.role === "Elite"
-                            ? "border-red-700/50 text-red-300 bg-red-900/20"
-                            : "border-gray-700/50 text-gray-300 bg-gray-900/20"
-                      }`}
-                    >
-                      {result.npc.is_boss ? "Boss" : result.npc.role ?? "Trash"}
-                    </Badge>
-                  </div>
-                  <div className="flex items-center gap-1">
-                    {result.instance.type === "dungeon" ? <Sword className="h-3 w-3" /> : <Crown className="h-3 w-3" />}
-                    <span>{result.instance.name}</span>
-                    <span className="text-green-400/50">({result.instance.level})</span>
-                  </div>
-                </div>
+                <p className="text-sm text-green-300/70 mb-3">{spell.description}</p>
 
                 {/* Additional Spell Stats */}
-                {(result.spell.damage || result.spell.castTime || result.spell.cooldown) && (
+                {(spell.damage || spell.castTime || spell.cooldown) && (
                   <div className="flex items-center gap-4 mt-2 text-xs text-green-300/50">
-                    {result.spell.damage && <span>Damage: {result.spell.damage.toLocaleString()}</span>}
-                    {result.spell.castTime && <span>Cast: {result.spell.castTime}s</span>}
-                    {result.spell.cooldown && <span>CD: {result.spell.cooldown}s</span>}
+                    {spell.damage && <span>Damage: {spell.damage.toLocaleString()}</span>}
+                    {spell.castTime && <span>Cast: {spell.castTime}s</span>}
+                    {spell.cooldown && <span>CD: {spell.cooldown}s</span>}
                   </div>
                 )}
               </div>

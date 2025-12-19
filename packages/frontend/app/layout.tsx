@@ -1,8 +1,10 @@
 import type React from "react"
 import type { Metadata } from "next"
 import { Inter } from "next/font/google"
+import Script from "next/script"
 import "./globals.css"
 import { ThemeProvider } from "@/components/theme-provider"
+import { WowheadProvider } from "@/components/wowhead-provider"
 
 const inter = Inter({ subsets: ["latin"] })
 
@@ -19,9 +21,16 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" suppressHydrationWarning>
+      <head>
+        <Script id="wowhead-config" strategy="afterInteractive">
+          {`const whTooltips = {colorLinks: true, iconizeLinks: true, renameLinks: true};`}
+        </Script>
+        <Script src="https://wow.zamimg.com/js/tooltips.js" strategy="afterInteractive" />
+      </head>
       <body className={inter.className}>
         <ThemeProvider attribute="class" defaultTheme="dark" enableSystem={false} disableTransitionOnChange>
           {children}
+          <WowheadProvider />
         </ThemeProvider>
       </body>
     </html>
