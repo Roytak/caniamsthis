@@ -258,7 +258,7 @@ export default function HomePage() {
       <footer className="border-t border-green-900/30 bg-black/50 backdrop-blur-sm mt-12">
         <div className="container mx-auto px-4 py-6 text-center">
           <p className="text-green-300/50 text-sm">
-            Unofficial World of Warcraft tool for Death Knight players • Not affiliated with Blizzard Entertainment
+            Unofficial World of Warcraft tool for Death Knight players.
           </p>
         </div>
       </footer>
