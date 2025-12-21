@@ -185,7 +185,7 @@
                                 "can_immune": true
                             }
                         ],
-                        "image_url": "https://wow.zamimg.com/uploads/screenshots/normal/1236194-plexus-sentinel.jpg"
+                        "image_url": "https://wow.zamimg.com/uploads/screenshots/small/1236194.jpg"
                     },
                     {
                         "name": "Loom'ithar",
@@ -509,7 +509,7 @@
                                 "can_immune": false
                             }
                         ],
-                        "image_url": "https://wow.zamimg.com/uploads/screenshots/normal/1235593-loomithar.jpg"
+                        "image_url": "https://wow.zamimg.com/uploads/screenshots/small/1235593.jpg"
                     },
                     {
                         "name": "Soulbinder Naazindhri",
@@ -777,7 +777,7 @@
                                 "can_immune": true
                             }
                         ],
-                        "image_url": "https://wow.zamimg.com/uploads/screenshots/normal/1236199-soulbinder-naazindhri.jpg"
+                        "image_url": "https://wow.zamimg.com/uploads/screenshots/small/1236199.jpg"
                     },
                     {
                         "name": "Dimensius",
@@ -1142,7 +1142,7 @@
                                 "can_immune": true
                             }
                         ],
-                        "image_url": "https://wow.zamimg.com/uploads/screenshots/normal/1235517-dimensius.jpg"
+                        "image_url": "https://wow.zamimg.com/uploads/screenshots/small/1235517.jpg"
                     },
                     {
                         "name": "Adarus Duskblaze",
@@ -1431,7 +1431,7 @@
                                 "can_immune": false
                             }
                         ],
-                        "image_url": "https://wow.zamimg.com/uploads/screenshots/normal/1236201-adarus-duskblaze.jpg"
+                        "image_url": "https://wow.zamimg.com/uploads/screenshots/small/1236201.jpg"
                     },
                     {
                         "name": "Fractillus",
@@ -1595,7 +1595,7 @@
                                 "can_immune": true
                             }
                         ],
-                        "image_url": "https://wow.zamimg.com/uploads/screenshots/normal/1236203-fractillus.jpg"
+                        "image_url": "https://wow.zamimg.com/uploads/screenshots/small/1236203.jpg"
                     }
                 ]
             }
@@ -1682,7 +1682,7 @@
                                 "can_immune": false
                             }
                         ],
-                        "image_url": "https://wow.zamimg.com/uploads/screenshots/normal/1185630-avanoxx.jpg"
+                        "image_url": "https://wow.zamimg.com/uploads/screenshots/small/1185630.jpg"
                     },
                     {
                         "name": "Engorged Crawler",
@@ -1730,7 +1730,7 @@
                                 "can_immune": false
                             }
                         ],
-                        "image_url": ""
+                        "image_url": "https://wow.zamimg.com/modelviewer/live/webthumbs/npc/80/117840.webp"
                     },
                     {
                         "name": "Anub'zekt",
@@ -1813,7 +1813,7 @@
                                 "can_immune": false
                             }
                         ],
-                        "image_url": "https://wow.zamimg.com/uploads/screenshots/normal/1185634-anubzekt.jpg"
+                        "image_url": "https://wow.zamimg.com/uploads/screenshots/small/1185634.jpg"
                     },
                     {
                         "name": "Ki'katal the Harvester",
@@ -1888,7 +1888,7 @@
                                 "can_immune": true
                             }
                         ],
-                        "image_url": "https://wow.zamimg.com/uploads/screenshots/normal/1185640-kikatal-the-harvester.jpg"
+                        "image_url": "https://wow.zamimg.com/uploads/screenshots/small/1185640.jpg"
                     },
                     {
                         "name": "Bloodworker",
@@ -1933,7 +1933,7 @@
                                 "can_immune": false
                             }
                         ],
-                        "image_url": ""
+                        "image_url": "https://wow.zamimg.com/modelviewer/live/webthumbs/npc/123/116347.webp"
                     },
                     {
                         "name": "Black Blood",
@@ -1952,7 +1952,7 @@
                                 "can_immune": true
                             }
                         ],
-                        "image_url": ""
+                        "image_url": "https://wow.zamimg.com/modelviewer/live/webthumbs/npc/20/113940.webp"
                     },
                     {
                         "name": "Trilling Attendant",
@@ -1986,7 +1986,7 @@
                                 "can_immune": true
                             }
                         ],
-                        "image_url": "https://wow.zamimg.com/uploads/screenshots/normal/1185627-trilling-attendant.jpg"
+                        "image_url": "https://wow.zamimg.com/uploads/screenshots/small/1185627.jpg"
                     },
                     {
                         "name": "Bloodstained Assistant",
@@ -2004,7 +2004,7 @@
                                 "can_immune": false
                             }
                         ],
-                        "image_url": ""
+                        "image_url": "https://wow.zamimg.com/modelviewer/live/webthumbs/npc/95/119391.webp"
                     },
                     {
                         "name": "Ravenous Crawler",
@@ -2046,7 +2046,7 @@
                                 "can_immune": false
                             }
                         ],
-                        "image_url": ""
+                        "image_url": "https://wow.zamimg.com/modelviewer/live/webthumbs/npc/44/120876.webp"
                     },
                     {
                         "name": "Bloodworker",
@@ -2069,7 +2069,7 @@
                                 "can_immune": false
                             }
                         ],
-                        "image_url": "https://wow.zamimg.com/uploads/screenshots/normal/1185636-bloodworker.jpg"
+                        "image_url": "https://wow.zamimg.com/uploads/screenshots/small/1185636.jpg"
                     },
                     {
                         "name": "Hulking Bloodguard",
@@ -2111,7 +2111,7 @@
                                 "can_immune": true
                             }
                         ],
-                        "image_url": "https://wow.zamimg.com/uploads/screenshots/normal/1185631-hulking-bloodguard.jpg"
+                        "image_url": "https://wow.zamimg.com/uploads/screenshots/small/1185631.jpg"
                     },
                     {
                         "name": "Sentry Stagshell",
@@ -2129,7 +2129,7 @@
                                 "can_immune": false
                             }
                         ],
-                        "image_url": ""
+                        "image_url": "https://wow.zamimg.com/modelviewer/live/webthumbs/npc/5/116485.webp"
                     },
                     {
                         "name": "Jabbing Flyer",
@@ -2148,7 +2148,7 @@
                                 "can_immune": false
                             }
                         ],
-                        "image_url": ""
+                        "image_url": "https://wow.zamimg.com/modelviewer/live/webthumbs/npc/9/120841.webp"
                     },
                     {
                         "name": "Reinforced Drone",
@@ -2207,7 +2207,7 @@
                                 "can_immune": true
                             }
                         ],
-                        "image_url": ""
+                        "image_url": "https://wow.zamimg.com/modelviewer/live/webthumbs/npc/28/120860.webp"
                     },
                     {
                         "name": "Blood Overseer",
@@ -2255,7 +2255,7 @@
                                 "can_immune": true
                             }
                         ],
-                        "image_url": "https://wow.zamimg.com/uploads/screenshots/normal/1185635-blood-overseer.jpg"
+                        "image_url": "https://wow.zamimg.com/uploads/screenshots/small/1185635.jpg"
                     },
                     {
                         "name": "Winged Carrier",
@@ -2309,7 +2309,7 @@
                                 "can_immune": false
                             }
                         ],
-                        "image_url": ""
+                        "image_url": "https://wow.zamimg.com/modelviewer/live/webthumbs/npc/125/116349.webp"
                     },
                     {
                         "name": "Black Blood",
@@ -2328,7 +2328,7 @@
                                 "can_immune": true
                             }
                         ],
-                        "image_url": ""
+                        "image_url": "https://wow.zamimg.com/modelviewer/live/webthumbs/npc/20/113940.webp"
                     },
                     {
                         "name": "Nerubian Hauler",
@@ -2368,7 +2368,7 @@
                                 "can_immune": false
                             }
                         ],
-                        "image_url": "https://wow.zamimg.com/uploads/screenshots/normal/1185638-nerubian-hauler.jpg"
+                        "image_url": "https://wow.zamimg.com/uploads/screenshots/small/1185638.jpg"
                     },
                     {
                         "name": "Ixin",
@@ -2415,7 +2415,7 @@
                                 "can_immune": true
                             }
                         ],
-                        "image_url": "https://wow.zamimg.com/uploads/screenshots/normal/1185626-ixin.jpg"
+                        "image_url": "https://wow.zamimg.com/uploads/screenshots/small/1185626.jpg"
                     },
                     {
                         "name": "Atik",
@@ -2477,7 +2477,7 @@
                                 "can_immune": true
                             }
                         ],
-                        "image_url": "https://wow.zamimg.com/uploads/screenshots/normal/1185629-atik.jpg"
+                        "image_url": "https://wow.zamimg.com/uploads/screenshots/small/1185629.jpg"
                     },
                     {
                         "name": "Nakt",
@@ -2520,7 +2520,7 @@
                                 "can_immune": false
                             }
                         ],
-                        "image_url": "https://wow.zamimg.com/uploads/screenshots/normal/1185628-nakt.jpg"
+                        "image_url": "https://wow.zamimg.com/uploads/screenshots/small/1185628.jpg"
                     },
                     {
                         "name": "Starved Crawler",
@@ -2554,7 +2554,7 @@
                                 "can_immune": false
                             }
                         ],
-                        "image_url": ""
+                        "image_url": "https://wow.zamimg.com/modelviewer/live/webthumbs/npc/120/114552.webp"
                     },
                     {
                         "name": "Ravenous Crawler",
@@ -2596,7 +2596,7 @@
                                 "can_immune": false
                             }
                         ],
-                        "image_url": ""
+                        "image_url": "https://wow.zamimg.com/modelviewer/live/webthumbs/npc/120/114552.webp"
                     },
                     {
                         "name": "Bloodstained Webmage",
@@ -2619,7 +2619,7 @@
                                 "can_immune": true
                             }
                         ],
-                        "image_url": ""
+                        "image_url": "https://wow.zamimg.com/modelviewer/live/webthumbs/npc/110/117870.webp"
                     },
                     {
                         "name": "Bloodstained Webmage",
@@ -2669,7 +2669,7 @@
                                 "can_immune": false
                             }
                         ],
-                        "image_url": ""
+                        "image_url": "https://wow.zamimg.com/modelviewer/live/webthumbs/npc/110/117870.webp"
                     },
                     {
                         "name": "Backfill Barrel",
@@ -2710,7 +2710,7 @@
                                 "can_immune": false
                             }
                         ],
-                        "image_url": ""
+                        "image_url": "https://wow.zamimg.com/modelviewer/live/webthumbs/npc/172/119724.webp"
                     },
                     {
                         "name": "Hulking Bloodguard",
@@ -2763,7 +2763,7 @@
                                 "can_immune": true
                             }
                         ],
-                        "image_url": ""
+                        "image_url": "https://wow.zamimg.com/modelviewer/live/webthumbs/npc/24/120856.webp"
                     },
                     {
                         "name": "Corrupted Machinist",
@@ -2786,7 +2786,7 @@
                                 "can_immune": true
                             }
                         ],
-                        "image_url": ""
+                        "image_url": "https://wow.zamimg.com/modelviewer/live/webthumbs/npc/150/118422.webp"
                     },
                     {
                         "name": "Explosive Bomberbot",
@@ -2825,7 +2825,7 @@
                                 "can_immune": false
                             }
                         ],
-                        "image_url": ""
+                        "image_url": "https://wow.zamimg.com/modelviewer/live/webthumbs/npc/210/117970.webp"
                     },
                     {
                         "name": "Malfunctioning Pylon",
@@ -2860,7 +2860,7 @@
                                 "can_immune": true
                             }
                         ],
-                        "image_url": ""
+                        "image_url": "https://wow.zamimg.com/modelviewer/live/webthumbs/npc/76/118860.webp"
                     },
                     {
                         "name": "Medbot",
@@ -2898,7 +2898,7 @@
                                 "can_immune": true
                             }
                         ],
-                        "image_url": ""
+                        "image_url": "https://wow.zamimg.com/modelviewer/live/webthumbs/npc/176/116912.webp"
                     }
                 ]
             },
@@ -2923,7 +2923,7 @@
                                 "can_immune": false
                             }
                         ],
-                        "image_url": "https://wow.zamimg.com/uploads/screenshots/normal/913462-ancient-gazelle.jpg"
+                        "image_url": "https://wow.zamimg.com/uploads/screenshots/small/913462.jpg"
                     },
                     {
                         "name": "Sureki Webmage",
@@ -2968,7 +2968,7 @@
                                 "can_immune": true
                             }
                         ],
-                        "image_url": "https://wow.zamimg.com/uploads/screenshots/normal/1185619-sureki-webmage.jpg"
+                        "image_url": "https://wow.zamimg.com/uploads/screenshots/small/1185619.jpg"
                     },
                     {
                         "name": "Speaker Shadowcrown",
@@ -3161,7 +3161,7 @@
                                 "can_immune": false
                             }
                         ],
-                        "image_url": "https://wow.zamimg.com/uploads/screenshots/normal/1185620-speaker-shadowcrown.jpg"
+                        "image_url": "https://wow.zamimg.com/uploads/screenshots/small/1185620.jpg"
                     },
                     {
                         "name": "Anub'ikkaj",
@@ -3290,7 +3290,7 @@
                                 "can_immune": true
                             }
                         ],
-                        "image_url": ""
+                        "image_url": "https://wow.zamimg.com/modelviewer/live/webthumbs/npc/139/114315.webp"
                     },
                     {
                         "name": "Ascendant Vis'coxria",
@@ -3354,7 +3354,7 @@
                                 "can_immune": true
                             }
                         ],
-                        "image_url": ""
+                        "image_url": "https://wow.zamimg.com/modelviewer/live/webthumbs/npc/169/122793.webp"
                     },
                     {
                         "name": "Ixkreten the Unbreakable",
@@ -3431,7 +3431,7 @@
                                 "can_immune": true
                             }
                         ],
-                        "image_url": ""
+                        "image_url": "https://wow.zamimg.com/modelviewer/live/webthumbs/npc/171/122795.webp"
                     },
                     {
                         "name": "Deathscreamer Iken'tak",
@@ -3519,7 +3519,7 @@
                                 "can_immune": true
                             }
                         ],
-                        "image_url": ""
+                        "image_url": "https://wow.zamimg.com/modelviewer/live/webthumbs/npc/170/122794.webp"
                     },
                     {
                         "name": "Manifested Shadow",
@@ -3576,7 +3576,7 @@
                                 "can_immune": true
                             }
                         ],
-                        "image_url": ""
+                        "image_url": "https://wow.zamimg.com/modelviewer/live/webthumbs/npc/249/121337.webp"
                     },
                     {
                         "name": "Nightfall Dark Architect",
@@ -3642,7 +3642,7 @@
                                 "can_immune": true
                             }
                         ],
-                        "image_url": "https://wow.zamimg.com/uploads/screenshots/normal/1185621-nightfall-dark-architect.jpg"
+                        "image_url": "https://wow.zamimg.com/uploads/screenshots/small/1185621.jpg"
                     },
                     {
                         "name": "Nightfall Shadowmage",
@@ -3672,7 +3672,7 @@
                                 "can_immune": true
                             }
                         ],
-                        "image_url": "https://wow.zamimg.com/uploads/screenshots/normal/1185614-nightfall-shadowmage.jpg"
+                        "image_url": "https://wow.zamimg.com/uploads/screenshots/small/1185614.jpg"
                     },
                     {
                         "name": "Nightfall Darkcaster",
@@ -3702,7 +3702,7 @@
                                 "can_immune": true
                             }
                         ],
-                        "image_url": ""
+                        "image_url": "https://wow.zamimg.com/modelviewer/live/webthumbs/npc/53/121397.webp"
                     },
                     {
                         "name": "Nightfall Curseblade",
@@ -3728,7 +3728,7 @@
                                 "can_immune": false
                             }
                         ],
-                        "image_url": "https://wow.zamimg.com/uploads/screenshots/normal/1185616-nightfall-curseblade.jpg"
+                        "image_url": "https://wow.zamimg.com/uploads/screenshots/small/1185616.jpg"
                     },
                     {
                         "name": "Nightfall Shadowalker",
@@ -3753,7 +3753,7 @@
                                 "can_immune": true
                             }
                         ],
-                        "image_url": ""
+                        "image_url": "https://wow.zamimg.com/modelviewer/live/webthumbs/npc/74/115530.webp"
                     },
                     {
                         "name": "Unstable Darkness",
@@ -3827,7 +3827,7 @@
                                 "can_immune": true
                             }
                         ],
-                        "image_url": ""
+                        "image_url": "https://wow.zamimg.com/modelviewer/live/webthumbs/npc/247/121335.webp"
                     },
                     {
                         "name": "Nightfall Tactician",
@@ -3858,7 +3858,7 @@
                                 "can_immune": false
                             }
                         ],
-                        "image_url": ""
+                        "image_url": "https://wow.zamimg.com/modelviewer/live/webthumbs/npc/54/121398.webp"
                     },
                     {
                         "name": "Rasha'nan",
@@ -4124,7 +4124,7 @@
                                 "can_immune": true
                             }
                         ],
-                        "image_url": "https://wow.zamimg.com/uploads/screenshots/normal/1185622-rashanan.jpg"
+                        "image_url": "https://wow.zamimg.com/uploads/screenshots/small/1185622.jpg"
                     },
                     {
                         "name": "Nightfall Ritualist",
@@ -4155,7 +4155,7 @@
                                 "can_immune": true
                             }
                         ],
-                        "image_url": "https://wow.zamimg.com/uploads/screenshots/normal/1185615-nightfall-ritualist.jpg"
+                        "image_url": "https://wow.zamimg.com/uploads/screenshots/small/1185615.jpg"
                     },
                     {
                         "name": "Nightfall Commander",
@@ -4190,7 +4190,7 @@
                                 "can_immune": true
                             }
                         ],
-                        "image_url": "https://wow.zamimg.com/uploads/screenshots/normal/1185618-nightfall-commander.jpg"
+                        "image_url": "https://wow.zamimg.com/uploads/screenshots/small/1185618.jpg"
                     },
                     {
                         "name": "Backfill Barrel",
@@ -4231,7 +4231,7 @@
                                 "can_immune": false
                             }
                         ],
-                        "image_url": ""
+                        "image_url": "https://wow.zamimg.com/modelviewer/live/webthumbs/npc/172/119724.webp"
                     },
                     {
                         "name": "Nightfall Shadowmage",
@@ -4350,7 +4350,7 @@
                                 "can_immune": true
                             }
                         ],
-                        "image_url": ""
+                        "image_url": "https://wow.zamimg.com/modelviewer/live/webthumbs/npc/124/114556.webp"
                     },
                     {
                         "name": "Mereldar Citizen",
@@ -4379,7 +4379,7 @@
                                 "can_immune": true
                             }
                         ],
-                        "image_url": ""
+                        "image_url": "https://wow.zamimg.com/modelviewer/live/webthumbs/npc/70/115014.webp"
                     },
                     {
                         "name": "Nightfall Darkcaster",
@@ -4400,7 +4400,7 @@
                                 "can_immune": true
                             }
                         ],
-                        "image_url": ""
+                        "image_url": "https://wow.zamimg.com/modelviewer/live/webthumbs/npc/56/121400.webp"
                     },
                     {
                         "name": "Nightfall Shadowalker",
@@ -4418,7 +4418,7 @@
                                 "can_immune": true
                             }
                         ],
-                        "image_url": ""
+                        "image_url": "https://wow.zamimg.com/modelviewer/live/webthumbs/npc/55/121399.webp"
                     },
                     {
                         "name": "Nightfall Shadowalker",
@@ -4523,7 +4523,7 @@
                                 "can_immune": false
                             }
                         ],
-                        "image_url": ""
+                        "image_url": "https://wow.zamimg.com/modelviewer/live/webthumbs/npc/45/121389.webp"
                     },
                     {
                         "name": "Nightfall Darkcaster",
@@ -4580,7 +4580,7 @@
                                 "can_immune": true
                             }
                         ],
-                        "image_url": ""
+                        "image_url": "https://wow.zamimg.com/modelviewer/live/webthumbs/npc/53/121397.webp"
                     },
                     {
                         "name": "Nightfall Shadowmage",
@@ -4637,7 +4637,7 @@
                                 "can_immune": true
                             }
                         ],
-                        "image_url": ""
+                        "image_url": "https://wow.zamimg.com/modelviewer/live/webthumbs/npc/47/121391.webp"
                     },
                     {
                         "name": "Corrupted Machinist",
@@ -4660,7 +4660,7 @@
                                 "can_immune": true
                             }
                         ],
-                        "image_url": ""
+                        "image_url": "https://wow.zamimg.com/modelviewer/live/webthumbs/npc/150/118422.webp"
                     },
                     {
                         "name": "Explosive Bomberbot",
@@ -4679,7 +4679,7 @@
                                 "can_immune": true
                             }
                         ],
-                        "image_url": ""
+                        "image_url": "https://wow.zamimg.com/modelviewer/live/webthumbs/npc/248/122104.webp"
                     },
                     {
                         "name": "Malfunctioning Pylon",
@@ -4714,7 +4714,7 @@
                                 "can_immune": true
                             }
                         ],
-                        "image_url": ""
+                        "image_url": "https://wow.zamimg.com/modelviewer/live/webthumbs/npc/76/118860.webp"
                     },
                     {
                         "name": "Medbot",
@@ -4735,7 +4735,7 @@
                                 "can_immune": true
                             }
                         ],
-                        "image_url": ""
+                        "image_url": "https://wow.zamimg.com/modelviewer/live/webthumbs/npc/163/122019.webp"
                     },
                     {
                         "name": "Automatic Ironstrider",
@@ -4752,7 +4752,7 @@
                                 "can_immune": true
                             }
                         ],
-                        "image_url": ""
+                        "image_url": "https://wow.zamimg.com/modelviewer/live/webthumbs/npc/176/116912.webp"
                     },
                     {
                         "name": "Under-Lord Vik'tis",
@@ -4790,7 +4790,7 @@
                                 "can_immune": true
                             }
                         ],
-                        "image_url": ""
+                        "image_url": "https://wow.zamimg.com/modelviewer/live/webthumbs/npc/9/115721.webp"
                     }
                 ]
             },
@@ -4867,7 +4867,7 @@
                                 "can_immune": false
                             }
                         ],
-                        "image_url": "https://wow.zamimg.com/uploads/screenshots/normal/1174349-fervent-sharpshooter.jpg"
+                        "image_url": "https://wow.zamimg.com/uploads/screenshots/small/1174349.jpg"
                     },
                     {
                         "name": "Arathi Knight",
@@ -4898,7 +4898,7 @@
                                 "can_immune": false
                             }
                         ],
-                        "image_url": "https://wow.zamimg.com/uploads/screenshots/normal/1174347-arathi-knight.jpg"
+                        "image_url": "https://wow.zamimg.com/uploads/screenshots/small/1174347.jpg"
                     },
                     {
                         "name": "Devout Priest",
@@ -5025,7 +5025,7 @@
                                 "can_immune": true
                             }
                         ],
-                        "image_url": "https://wow.zamimg.com/uploads/screenshots/normal/1174444-fanatical-conjuror.jpg"
+                        "image_url": "https://wow.zamimg.com/uploads/screenshots/small/1174444.jpg"
                     },
                     {
                         "name": "War Lynx",
@@ -5094,7 +5094,7 @@
                                 "can_immune": false
                             }
                         ],
-                        "image_url": "https://wow.zamimg.com/uploads/screenshots/normal/1174348-war-lynx.jpg"
+                        "image_url": "https://wow.zamimg.com/uploads/screenshots/small/1174348.jpg"
                     },
                     {
                         "name": "Ardent Paladin",
@@ -5210,7 +5210,7 @@
                                 "can_immune": true
                             }
                         ],
-                        "image_url": "https://wow.zamimg.com/uploads/screenshots/normal/1174346-arathi-footman.jpg"
+                        "image_url": "https://wow.zamimg.com/uploads/screenshots/small/1174346.jpg"
                     },
                     {
                         "name": "Lightspawn",
@@ -5249,7 +5249,7 @@
                                 "can_immune": true
                             }
                         ],
-                        "image_url": "https://wow.zamimg.com/uploads/screenshots/normal/1174446-lightspawn.jpg"
+                        "image_url": "https://wow.zamimg.com/uploads/screenshots/small/1174446.jpg"
                     },
                     {
                         "name": "Baron Braunpyke",
@@ -5336,7 +5336,7 @@
                                 "can_immune": false
                             }
                         ],
-                        "image_url": "https://wow.zamimg.com/uploads/screenshots/normal/1184609-baron-braunpyke.jpg"
+                        "image_url": "https://wow.zamimg.com/uploads/screenshots/small/1184609.jpg"
                     },
                     {
                         "name": "Prioress Murrpray",
@@ -5517,7 +5517,7 @@
                                 "can_immune": true
                             }
                         ],
-                        "image_url": "https://wow.zamimg.com/uploads/screenshots/normal/1184617-prioress-murrpray.jpg"
+                        "image_url": "https://wow.zamimg.com/uploads/screenshots/small/1184617.jpg"
                     },
                     {
                         "name": "Arathi Neophyte",
@@ -5557,7 +5557,7 @@
                                 "can_immune": true
                             }
                         ],
-                        "image_url": "https://wow.zamimg.com/uploads/screenshots/normal/1184598-arathi-neophyte.jpg"
+                        "image_url": "https://wow.zamimg.com/uploads/screenshots/small/1184598.jpg"
                     },
                     {
                         "name": "Captain Dailcry",
@@ -5689,7 +5689,7 @@
                                 "can_immune": false
                             }
                         ],
-                        "image_url": "https://wow.zamimg.com/uploads/screenshots/normal/1184600-captain-dailcry.jpg"
+                        "image_url": "https://wow.zamimg.com/uploads/screenshots/small/1184600.jpg"
                     },
                     {
                         "name": "Zealous Templar",
@@ -5743,7 +5743,7 @@
                                 "can_immune": true
                             }
                         ],
-                        "image_url": "https://wow.zamimg.com/uploads/screenshots/normal/1184601-zealous-templar.jpg"
+                        "image_url": "https://wow.zamimg.com/uploads/screenshots/small/1184601.jpg"
                     },
                     {
                         "name": "Arathi Neophyte",
@@ -5858,7 +5858,7 @@
                                 "can_immune": false
                             }
                         ],
-                        "image_url": "https://wow.zamimg.com/uploads/screenshots/normal/1184599-taener-duelmal.jpg"
+                        "image_url": "https://wow.zamimg.com/uploads/screenshots/small/1184599.jpg"
                     },
                     {
                         "name": "Elaena Emberlanz",
@@ -5937,7 +5937,7 @@
                                 "can_immune": true
                             }
                         ],
-                        "image_url": "https://wow.zamimg.com/uploads/screenshots/normal/1184596-elaena-emberlanz.jpg"
+                        "image_url": "https://wow.zamimg.com/uploads/screenshots/small/1184596.jpg"
                     },
                     {
                         "name": "Sergeant Shaynemail",
@@ -6024,7 +6024,7 @@
                                 "can_immune": false
                             }
                         ],
-                        "image_url": "https://wow.zamimg.com/uploads/screenshots/normal/1174351-sergeant-shaynemail.jpg"
+                        "image_url": "https://wow.zamimg.com/uploads/screenshots/small/1174351.jpg"
                     },
                     {
                         "name": "Guard Captain Suleyman",
@@ -6108,7 +6108,7 @@
                                 "can_immune": true
                             }
                         ],
-                        "image_url": "https://wow.zamimg.com/uploads/screenshots/normal/1184597-high-priest-aemya.jpg"
+                        "image_url": "https://wow.zamimg.com/uploads/screenshots/small/1184597.jpg"
                     },
                     {
                         "name": "Forge Master Damian",
@@ -6161,7 +6161,7 @@
                                 "can_immune": true
                             }
                         ],
-                        "image_url": "https://wow.zamimg.com/uploads/screenshots/normal/1174447-forge-master-damian.jpg"
+                        "image_url": "https://wow.zamimg.com/uploads/screenshots/small/1174447.jpg"
                     },
                     {
                         "name": "Risen Footman",
@@ -6258,7 +6258,7 @@
                                 "can_immune": false
                             }
                         ],
-                        "image_url": "https://wow.zamimg.com/uploads/screenshots/normal/1184616-risen-footman.jpg"
+                        "image_url": "https://wow.zamimg.com/uploads/screenshots/small/1184616.jpg"
                     },
                     {
                         "name": "Arathi Neophyte",
@@ -6298,7 +6298,7 @@
                                 "can_immune": true
                             }
                         ],
-                        "image_url": ""
+                        "image_url": "https://wow.zamimg.com/modelviewer/live/webthumbs/npc/185/121017.webp"
                     },
                     {
                         "name": "Sir Braunpyke",
@@ -6478,7 +6478,7 @@
                                 "can_immune": false
                             }
                         ],
-                        "image_url": "https://wow.zamimg.com/uploads/screenshots/normal/1184611-risen-mage.jpg"
+                        "image_url": "https://wow.zamimg.com/uploads/screenshots/small/1184611.jpg"
                     },
                     {
                         "name": "Sacred Flame Vintner",
@@ -6500,7 +6500,7 @@
                                 "can_immune": true
                             }
                         ],
-                        "image_url": "https://wow.zamimg.com/uploads/screenshots/normal/1174345-sacred-flame-vintner.jpg"
+                        "image_url": "https://wow.zamimg.com/uploads/screenshots/small/1174345.jpg"
                     },
                     {
                         "name": "Backfill Barrel",
@@ -6541,7 +6541,7 @@
                                 "can_immune": false
                             }
                         ],
-                        "image_url": ""
+                        "image_url": "https://wow.zamimg.com/modelviewer/live/webthumbs/npc/172/119724.webp"
                     },
                     {
                         "name": "Corrupted Machinist",
@@ -6564,7 +6564,7 @@
                                 "can_immune": true
                             }
                         ],
-                        "image_url": ""
+                        "image_url": "https://wow.zamimg.com/modelviewer/live/webthumbs/npc/150/118422.webp"
                     },
                     {
                         "name": "Explosive Bomberbot",
@@ -6583,7 +6583,7 @@
                                 "can_immune": true
                             }
                         ],
-                        "image_url": ""
+                        "image_url": "https://wow.zamimg.com/modelviewer/live/webthumbs/npc/248/122104.webp"
                     },
                     {
                         "name": "Nullbot",
@@ -6603,7 +6603,7 @@
                                 "can_immune": false
                             }
                         ],
-                        "image_url": ""
+                        "image_url": "https://wow.zamimg.com/modelviewer/live/webthumbs/npc/210/117970.webp"
                     },
                     {
                         "name": "Elaena Emberlanz",
@@ -6671,7 +6671,7 @@
                                 "can_immune": true
                             }
                         ],
-                        "image_url": ""
+                        "image_url": "https://wow.zamimg.com/modelviewer/live/webthumbs/npc/88/118872.webp"
                     },
                     {
                         "name": "Taener Duelmal",
@@ -6746,7 +6746,7 @@
                                 "can_immune": false
                             }
                         ],
-                        "image_url": ""
+                        "image_url": "https://wow.zamimg.com/modelviewer/live/webthumbs/npc/89/118873.webp"
                     },
                     {
                         "name": "Sergeant Shaynemail",
@@ -6858,7 +6858,7 @@
                                 "can_immune": false
                             }
                         ],
-                        "image_url": ""
+                        "image_url": "https://wow.zamimg.com/modelviewer/live/webthumbs/npc/44/118572.webp"
                     },
                     {
                         "name": "Backfill Barrel",
@@ -6899,7 +6899,7 @@
                                 "can_immune": false
                             }
                         ],
-                        "image_url": ""
+                        "image_url": "https://wow.zamimg.com/modelviewer/live/webthumbs/npc/172/119724.webp"
                     },
                     {
                         "name": "Swampface",
@@ -6987,7 +6987,7 @@
                                 "can_immune": false
                             }
                         ],
-                        "image_url": ""
+                        "image_url": "https://wow.zamimg.com/modelviewer/live/webthumbs/npc/123/124283.webp"
                     },
                     {
                         "name": "Big M.O.M.M.A.",
@@ -7070,7 +7070,7 @@
                                 "can_immune": false
                             }
                         ],
-                        "image_url": ""
+                        "image_url": "https://wow.zamimg.com/modelviewer/live/webthumbs/npc/103/122215.webp"
                     },
                     {
                         "name": "Keeza Quickfuse",
@@ -7147,7 +7147,7 @@
                                 "can_immune": false
                             }
                         ],
-                        "image_url": ""
+                        "image_url": "https://wow.zamimg.com/modelviewer/live/webthumbs/npc/156/123036.webp"
                     },
                     {
                         "name": "Geezle Gigazap",
@@ -7261,7 +7261,7 @@
                                 "can_immune": false
                             }
                         ],
-                        "image_url": ""
+                        "image_url": "https://wow.zamimg.com/modelviewer/live/webthumbs/npc/107/122475.webp"
                     },
                     {
                         "name": "Waterworks Crocolisk",
@@ -7276,7 +7276,7 @@
                                 "can_immune": false
                             }
                         ],
-                        "image_url": ""
+                        "image_url": "https://wow.zamimg.com/modelviewer/live/webthumbs/npc/74/75850.webp"
                     },
                     {
                         "name": "Darkfuse Soldier",
@@ -7301,7 +7301,7 @@
                                 "can_immune": true
                             }
                         ],
-                        "image_url": ""
+                        "image_url": "https://wow.zamimg.com/modelviewer/live/webthumbs/npc/128/122752.webp"
                     },
                     {
                         "name": "Darkfuse Mechadrone",
@@ -7343,7 +7343,7 @@
                                 "can_immune": false
                             }
                         ],
-                        "image_url": ""
+                        "image_url": "https://wow.zamimg.com/modelviewer/live/webthumbs/npc/21/125461.webp"
                     },
                     {
                         "name": "Mechadrone Sniper",
@@ -7426,7 +7426,7 @@
                                 "can_immune": false
                             }
                         ],
-                        "image_url": ""
+                        "image_url": "https://wow.zamimg.com/modelviewer/live/webthumbs/npc/52/124724.webp"
                     },
                     {
                         "name": "Venture Co. Architect",
@@ -7489,7 +7489,7 @@
                                 "can_immune": true
                             }
                         ],
-                        "image_url": ""
+                        "image_url": "https://wow.zamimg.com/modelviewer/live/webthumbs/npc/241/122097.webp"
                     },
                     {
                         "name": "Darkfuse Hyena",
@@ -7532,7 +7532,7 @@
                                 "can_immune": false
                             }
                         ],
-                        "image_url": ""
+                        "image_url": "https://wow.zamimg.com/modelviewer/live/webthumbs/npc/205/121293.webp"
                     },
                     {
                         "name": "Venture Co. Surveyor",
@@ -7590,7 +7590,7 @@
                                 "can_immune": true
                             }
                         ],
-                        "image_url": ""
+                        "image_url": "https://wow.zamimg.com/modelviewer/live/webthumbs/npc/224/122080.webp"
                     },
                     {
                         "name": "Corrupted Machinist",
@@ -7632,7 +7632,7 @@
                                 "can_immune": true
                             }
                         ],
-                        "image_url": ""
+                        "image_url": "https://wow.zamimg.com/modelviewer/live/webthumbs/npc/248/122104.webp"
                     },
                     {
                         "name": "Malfunctioning Pylon",
@@ -7667,7 +7667,7 @@
                                 "can_immune": true
                             }
                         ],
-                        "image_url": ""
+                        "image_url": "https://wow.zamimg.com/modelviewer/live/webthumbs/npc/76/118860.webp"
                     },
                     {
                         "name": "Medbot",
@@ -7688,7 +7688,7 @@
                                 "can_immune": true
                             }
                         ],
-                        "image_url": ""
+                        "image_url": "https://wow.zamimg.com/modelviewer/live/webthumbs/npc/163/122019.webp"
                     },
                     {
                         "name": "Automatic Ironstrider",
@@ -7705,7 +7705,7 @@
                                 "can_immune": true
                             }
                         ],
-                        "image_url": ""
+                        "image_url": "https://wow.zamimg.com/modelviewer/live/webthumbs/npc/176/116912.webp"
                     },
                     {
                         "name": "Shreddinator 3000",
@@ -7772,7 +7772,7 @@
                                 "can_immune": false
                             }
                         ],
-                        "image_url": ""
+                        "image_url": "https://wow.zamimg.com/modelviewer/live/webthumbs/npc/1/122881.webp"
                     },
                     {
                         "name": "Darkfuse Bloodwarper",
@@ -7812,7 +7812,7 @@
                                 "can_immune": false
                             }
                         ],
-                        "image_url": ""
+                        "image_url": "https://wow.zamimg.com/modelviewer/live/webthumbs/npc/175/126383.webp"
                     },
                     {
                         "name": "Loaderbot",
@@ -7840,7 +7840,7 @@
                                 "can_immune": false
                             }
                         ],
-                        "image_url": ""
+                        "image_url": "https://wow.zamimg.com/modelviewer/live/webthumbs/npc/96/121696.webp"
                     },
                     {
                         "name": "Scaffolding",
@@ -7857,7 +7857,7 @@
                                 "can_immune": false
                             }
                         ],
-                        "image_url": ""
+                        "image_url": "https://wow.zamimg.com/modelviewer/live/webthumbs/npc/17/124689.webp"
                     },
                     {
                         "name": "Bubbles",
@@ -7927,7 +7927,7 @@
                                 "can_immune": true
                             }
                         ],
-                        "image_url": ""
+                        "image_url": "https://wow.zamimg.com/modelviewer/live/webthumbs/npc/110/124782.webp"
                     },
                     {
                         "name": "Disturbed Kelp",
@@ -7956,7 +7956,7 @@
                                 "can_immune": false
                             }
                         ],
-                        "image_url": ""
+                        "image_url": "https://wow.zamimg.com/modelviewer/live/webthumbs/npc/241/126961.webp"
                     },
                     {
                         "name": "Venture Co. Electrician",
@@ -8045,7 +8045,7 @@
                                 "can_immune": false
                             }
                         ],
-                        "image_url": ""
+                        "image_url": "https://wow.zamimg.com/modelviewer/live/webthumbs/npc/149/122517.webp"
                     },
                     {
                         "name": "Undercrawler",
@@ -8060,7 +8060,7 @@
                                 "can_immune": true
                             }
                         ],
-                        "image_url": ""
+                        "image_url": "https://wow.zamimg.com/modelviewer/live/webthumbs/npc/65/112449.webp"
                     },
                     {
                         "name": "Darkfuse Inspector",
@@ -8082,7 +8082,7 @@
                                 "can_immune": true
                             }
                         ],
-                        "image_url": ""
+                        "image_url": "https://wow.zamimg.com/modelviewer/live/webthumbs/npc/17/124177.webp"
                     },
                     {
                         "name": "Venture Co. Diver",
@@ -8112,7 +8112,7 @@
                                 "can_immune": false
                             }
                         ],
-                        "image_url": ""
+                        "image_url": "https://wow.zamimg.com/modelviewer/live/webthumbs/npc/7/122887.webp"
                     },
                     {
                         "name": "Bombshell Crab",
@@ -8139,7 +8139,7 @@
                                 "can_immune": true
                             }
                         ],
-                        "image_url": ""
+                        "image_url": "https://wow.zamimg.com/modelviewer/live/webthumbs/npc/203/120779.webp"
                     },
                     {
                         "name": "Waterworks Bottomfeeder",
@@ -8154,7 +8154,7 @@
                                 "can_immune": false
                             }
                         ],
-                        "image_url": ""
+                        "image_url": "https://wow.zamimg.com/modelviewer/live/webthumbs/npc/13/127501.webp"
                     },
                     {
                         "name": "Tomb-Raider Drywhisker",
@@ -8187,7 +8187,7 @@
                                 "can_immune": false
                             }
                         ],
-                        "image_url": ""
+                        "image_url": "https://wow.zamimg.com/modelviewer/live/webthumbs/npc/172/114092.webp"
                     }
                 ]
             },
@@ -8215,7 +8215,7 @@
                                 "can_immune": true
                             }
                         ],
-                        "image_url": ""
+                        "image_url": "https://wow.zamimg.com/modelviewer/live/webthumbs/npc/150/118422.webp"
                     },
                     {
                         "name": "Explosive Bomberbot",
@@ -8234,7 +8234,7 @@
                                 "can_immune": true
                             }
                         ],
-                        "image_url": ""
+                        "image_url": "https://wow.zamimg.com/modelviewer/live/webthumbs/npc/248/122104.webp"
                     },
                     {
                         "name": "Invading Mite",
@@ -8251,7 +8251,7 @@
                                 "can_immune": false
                             }
                         ],
-                        "image_url": ""
+                        "image_url": "https://wow.zamimg.com/modelviewer/live/webthumbs/npc/54/131382.webp"
                     },
                     {
                         "name": "Wastelander Phaseblade",
@@ -8282,7 +8282,7 @@
                                 "can_immune": true
                             }
                         ],
-                        "image_url": ""
+                        "image_url": "https://wow.zamimg.com/modelviewer/live/webthumbs/npc/82/131410.webp"
                     },
                     {
                         "name": "Voracious Gorger",
@@ -8328,7 +8328,7 @@
                                 "can_immune": false
                             }
                         ],
-                        "image_url": ""
+                        "image_url": "https://wow.zamimg.com/modelviewer/live/webthumbs/npc/57/131385.webp"
                     },
                     {
                         "name": "Azhiccar",
@@ -8457,7 +8457,7 @@
                                 "can_immune": false
                             }
                         ],
-                        "image_url": "https://wow.zamimg.com/uploads/screenshots/normal/1236227-azhiccar.jpg"
+                        "image_url": "https://wow.zamimg.com/uploads/screenshots/small/1236227.jpg"
                     },
                     {
                         "name": "Ravaging Scavenger",
@@ -8498,7 +8498,7 @@
                                 "can_immune": false
                             }
                         ],
-                        "image_url": ""
+                        "image_url": "https://wow.zamimg.com/modelviewer/live/webthumbs/npc/55/131383.webp"
                     },
                     {
                         "name": "Wastes Creeper",
@@ -8528,7 +8528,7 @@
                                 "can_immune": true
                             }
                         ],
-                        "image_url": ""
+                        "image_url": "https://wow.zamimg.com/modelviewer/live/webthumbs/npc/113/131441.webp"
                     },
                     {
                         "name": "Taah'bat",
@@ -8638,7 +8638,7 @@
                                 "can_immune": false
                             }
                         ],
-                        "image_url": "https://wow.zamimg.com/uploads/screenshots/normal/1236229-taahbat.jpg"
+                        "image_url": "https://wow.zamimg.com/uploads/screenshots/small/1236229.jpg"
                     },
                     {
                         "name": "Soul-Scribe",
@@ -8787,7 +8787,7 @@
                                 "can_immune": true
                             }
                         ],
-                        "image_url": "https://wow.zamimg.com/uploads/screenshots/normal/1236230-soul-scribe.jpg"
+                        "image_url": "https://wow.zamimg.com/uploads/screenshots/small/1236230.jpg"
                     },
                     {
                         "name": "Wastelander Pactspeaker",
@@ -8891,7 +8891,7 @@
                                 "can_immune": true
                             }
                         ],
-                        "image_url": ""
+                        "image_url": "https://wow.zamimg.com/modelviewer/live/webthumbs/npc/236/123884.webp"
                     },
                     {
                         "name": "Wastelander Ritualist",
@@ -8921,7 +8921,7 @@
                                 "can_immune": true
                             }
                         ],
-                        "image_url": ""
+                        "image_url": "https://wow.zamimg.com/modelviewer/live/webthumbs/npc/172/123820.webp"
                     },
                     {
                         "name": "Tamed Ruinstalker",
@@ -8942,7 +8942,7 @@
                                 "can_immune": true
                             }
                         ],
-                        "image_url": ""
+                        "image_url": "https://wow.zamimg.com/modelviewer/live/webthumbs/npc/69/131397.webp"
                     },
                     {
                         "name": "Wastelander Farstalker",
@@ -8971,7 +8971,7 @@
                                 "can_immune": true
                             }
                         ],
-                        "image_url": ""
+                        "image_url": "https://wow.zamimg.com/modelviewer/live/webthumbs/npc/213/123861.webp"
                     },
                     {
                         "name": "K'aresh Elemental",
@@ -8992,7 +8992,7 @@
                                 "can_immune": true
                             }
                         ],
-                        "image_url": ""
+                        "image_url": "https://wow.zamimg.com/modelviewer/live/webthumbs/npc/200/129736.webp"
                     },
                     {
                         "name": "Frenzied Mite",
@@ -9009,7 +9009,7 @@
                                 "can_immune": false
                             }
                         ],
-                        "image_url": ""
+                        "image_url": "https://wow.zamimg.com/modelviewer/live/webthumbs/npc/135/130695.webp"
                     },
                     {
                         "name": "Ravenous Destroyer",
@@ -9039,7 +9039,7 @@
                                 "can_immune": false
                             }
                         ],
-                        "image_url": ""
+                        "image_url": "https://wow.zamimg.com/modelviewer/live/webthumbs/npc/45/129837.webp"
                     },
                     {
                         "name": "A'wazj",
@@ -9183,7 +9183,7 @@
                                 "can_immune": true
                             }
                         ],
-                        "image_url": "https://wow.zamimg.com/uploads/screenshots/normal/1236228-awazj.jpg"
+                        "image_url": "https://wow.zamimg.com/uploads/screenshots/small/1236228.jpg"
                     },
                     {
                         "name": "A'wazj",
@@ -9228,7 +9228,7 @@
                                 "can_immune": false
                             }
                         ],
-                        "image_url": "https://wow.zamimg.com/uploads/screenshots/normal/1240961-awazj.jpg"
+                        "image_url": "https://wow.zamimg.com/uploads/screenshots/small/1240961.jpg"
                     },
                     {
                         "name": "Overgorged Mite",
@@ -9291,7 +9291,7 @@
                                 "can_immune": true
                             }
                         ],
-                        "image_url": ""
+                        "image_url": "https://wow.zamimg.com/modelviewer/live/webthumbs/npc/53/131381.webp"
                     },
                     {
                         "name": "Overcharged Sentinel",
@@ -9410,7 +9410,7 @@
                                 "can_immune": false
                             }
                         ],
-                        "image_url": ""
+                        "image_url": "https://wow.zamimg.com/modelviewer/live/webthumbs/npc/85/126549.webp"
                     },
                     {
                         "name": "Binding Javelin",
@@ -9499,7 +9499,7 @@
                                 "can_immune": true
                             }
                         ],
-                        "image_url": ""
+                        "image_url": "https://wow.zamimg.com/modelviewer/live/webthumbs/npc/121/131449.webp"
                     },
                     {
                         "name": "Ravaging Scavenger",
@@ -9531,7 +9531,7 @@
                                 "can_immune": true
                             }
                         ],
-                        "image_url": ""
+                        "image_url": "https://wow.zamimg.com/modelviewer/live/webthumbs/npc/12/100364.webp"
                     },
                     {
                         "name": "Voracious Gorger",
@@ -9563,7 +9563,7 @@
                                 "can_immune": true
                             }
                         ],
-                        "image_url": ""
+                        "image_url": "https://wow.zamimg.com/modelviewer/live/webthumbs/npc/17/94225.webp"
                     },
                     {
                         "name": "Bogpiper",
@@ -9594,7 +9594,7 @@
                                 "can_immune": true
                             }
                         ],
-                        "image_url": "https://wow.zamimg.com/uploads/screenshots/normal/1237562-bogpiper.jpg"
+                        "image_url": "https://wow.zamimg.com/uploads/screenshots/small/1237562.jpg"
                     },
                     {
                         "name": "Harbinger Ul'thul",
@@ -9629,7 +9629,7 @@
                                 "can_immune": false
                             }
                         ],
-                        "image_url": ""
+                        "image_url": "https://wow.zamimg.com/modelviewer/live/webthumbs/npc/111/91247.webp"
                     },
                     {
                         "name": "Steelsoul Arcanoward",
@@ -9695,7 +9695,7 @@
                                 "can_immune": true
                             }
                         ],
-                        "image_url": ""
+                        "image_url": "https://wow.zamimg.com/modelviewer/live/webthumbs/npc/88/126552.webp"
                     }
                 ]
             },
@@ -9831,7 +9831,7 @@
                                 "can_immune": true
                             }
                         ],
-                        "image_url": "https://wow.zamimg.com/uploads/screenshots/normal/755181-hand-from-beyond.jpg"
+                        "image_url": "https://wow.zamimg.com/uploads/screenshots/small/755181.jpg"
                     },
                     {
                         "name": "Ethereal Transmorpher",
@@ -9870,7 +9870,7 @@
                                 "can_immune": false
                             }
                         ],
-                        "image_url": "https://wow.zamimg.com/uploads/screenshots/normal/971084-ethereal-transmorpher.jpg"
+                        "image_url": "https://wow.zamimg.com/uploads/screenshots/small/971084.jpg"
                     },
                     {
                         "name": "Echelon",
@@ -9959,7 +9959,7 @@
                                 "can_immune": true
                             }
                         ],
-                        "image_url": "https://wow.zamimg.com/uploads/screenshots/normal/1190032-echelon.jpg"
+                        "image_url": "https://wow.zamimg.com/uploads/screenshots/small/1190032.jpg"
                     },
                     {
                         "name": "Lord Chamberlain",
@@ -10048,7 +10048,7 @@
                                 "can_immune": false
                             }
                         ],
-                        "image_url": "https://wow.zamimg.com/uploads/screenshots/normal/1190035-lord-chamberlain.jpg"
+                        "image_url": "https://wow.zamimg.com/uploads/screenshots/small/1190035.jpg"
                     },
                     {
                         "name": "Undying Stonefiend",
@@ -10120,7 +10120,7 @@
                                 "can_immune": true
                             }
                         ],
-                        "image_url": ""
+                        "image_url": "https://wow.zamimg.com/modelviewer/live/webthumbs/npc/158/93854.webp"
                     },
                     {
                         "name": "Shard of Halkias",
@@ -10135,7 +10135,7 @@
                                 "can_immune": false
                             }
                         ],
-                        "image_url": ""
+                        "image_url": "https://wow.zamimg.com/modelviewer/live/webthumbs/npc/148/94868.webp"
                     },
                     {
                         "name": "Depraved Houndmaster",
@@ -10180,7 +10180,7 @@
                                 "can_immune": false
                             }
                         ],
-                        "image_url": ""
+                        "image_url": "https://wow.zamimg.com/modelviewer/live/webthumbs/npc/233/97001.webp"
                     },
                     {
                         "name": "Vicious Gargon",
@@ -10216,7 +10216,7 @@
                                 "can_immune": false
                             }
                         ],
-                        "image_url": ""
+                        "image_url": "https://wow.zamimg.com/modelviewer/live/webthumbs/npc/235/93163.webp"
                     },
                     {
                         "name": "Halkias",
@@ -10302,7 +10302,7 @@
                                 "can_immune": false
                             }
                         ],
-                        "image_url": "https://wow.zamimg.com/uploads/screenshots/normal/1190031-halkias.jpg"
+                        "image_url": "https://wow.zamimg.com/uploads/screenshots/small/1190031.jpg"
                     },
                     {
                         "name": "High Adjudicator Aleez",
@@ -10389,7 +10389,7 @@
                                 "can_immune": false
                             }
                         ],
-                        "image_url": "https://wow.zamimg.com/uploads/screenshots/normal/1190033-high-adjudicator-aleez.jpg"
+                        "image_url": "https://wow.zamimg.com/uploads/screenshots/small/1190033.jpg"
                     },
                     {
                         "name": "Depraved Obliterator",
@@ -10427,7 +10427,7 @@
                                 "can_immune": true
                             }
                         ],
-                        "image_url": ""
+                        "image_url": "https://wow.zamimg.com/modelviewer/live/webthumbs/npc/240/93680.webp"
                     },
                     {
                         "name": "Toiling Groundskeeper",
@@ -10461,7 +10461,7 @@
                                 "can_immune": false
                             }
                         ],
-                        "image_url": ""
+                        "image_url": "https://wow.zamimg.com/modelviewer/live/webthumbs/npc/118/93814.webp"
                     },
                     {
                         "name": "Depraved Darkblade",
@@ -10489,7 +10489,7 @@
                                 "can_immune": true
                             }
                         ],
-                        "image_url": ""
+                        "image_url": "https://wow.zamimg.com/modelviewer/live/webthumbs/npc/104/93032.webp"
                     },
                     {
                         "name": "Depraved Collector",
@@ -10517,7 +10517,7 @@
                                 "can_immune": true
                             }
                         ],
-                        "image_url": ""
+                        "image_url": "https://wow.zamimg.com/modelviewer/live/webthumbs/npc/109/94573.webp"
                     },
                     {
                         "name": "Ghastly Parishioner",
@@ -10607,7 +10607,7 @@
                                 "can_immune": false
                             }
                         ],
-                        "image_url": "https://wow.zamimg.com/uploads/screenshots/normal/1199302-stoneborn-slasher.jpg"
+                        "image_url": "https://wow.zamimg.com/uploads/screenshots/small/1199302.jpg"
                     },
                     {
                         "name": "Stonefiend Anklebiter",
@@ -10639,7 +10639,7 @@
                                 "can_immune": false
                             }
                         ],
-                        "image_url": ""
+                        "image_url": "https://wow.zamimg.com/modelviewer/live/webthumbs/npc/45/94765.webp"
                     },
                     {
                         "name": "Stoneborn Eviscerator",
@@ -10737,7 +10737,7 @@
                                 "can_immune": false
                             }
                         ],
-                        "image_url": ""
+                        "image_url": "https://wow.zamimg.com/modelviewer/live/webthumbs/npc/133/93829.webp"
                     },
                     {
                         "name": "Depraved Darkblade",
@@ -10765,7 +10765,7 @@
                                 "can_immune": true
                             }
                         ],
-                        "image_url": ""
+                        "image_url": "https://wow.zamimg.com/modelviewer/live/webthumbs/npc/146/93074.webp"
                     },
                     {
                         "name": "Inquisitor Sigar",
@@ -10862,7 +10862,7 @@
                                 "can_immune": true
                             }
                         ],
-                        "image_url": "https://wow.zamimg.com/uploads/screenshots/normal/1190034-inquisitor-sigar.jpg"
+                        "image_url": "https://wow.zamimg.com/uploads/screenshots/small/1190034.jpg"
                     },
                     {
                         "name": "Manifestation of Envy",
@@ -10923,7 +10923,7 @@
                                 "can_immune": false
                             }
                         ],
-                        "image_url": "https://wow.zamimg.com/uploads/screenshots/normal/995805-manifestation-of-envy.jpg"
+                        "image_url": "https://wow.zamimg.com/uploads/screenshots/small/995805.jpg"
                     },
                     {
                         "name": "Doomguard",
@@ -10938,7 +10938,7 @@
                                 "can_immune": false
                             }
                         ],
-                        "image_url": ""
+                        "image_url": "https://wow.zamimg.com/modelviewer/live/webthumbs/npc/154/100506.webp"
                     },
                     {
                         "name": "Infernal",
@@ -11020,7 +11020,7 @@
                                 "can_immune": true
                             }
                         ],
-                        "image_url": ""
+                        "image_url": "https://wow.zamimg.com/modelviewer/live/webthumbs/npc/170/100522.webp"
                     },
                     {
                         "name": "Wrathguard",
@@ -11060,7 +11060,7 @@
                                 "can_immune": true
                             }
                         ],
-                        "image_url": ""
+                        "image_url": "https://wow.zamimg.com/modelviewer/live/webthumbs/npc/160/100512.webp"
                     },
                     {
                         "name": "Shadowlands Wormhole",
@@ -11124,7 +11124,7 @@
                                 "can_immune": false
                             }
                         ],
-                        "image_url": ""
+                        "image_url": "https://wow.zamimg.com/modelviewer/live/webthumbs/npc/190/29886.webp"
                     },
                     {
                         "name": "Loyal Stoneborn",
@@ -11164,7 +11164,7 @@
                                 "can_immune": false
                             }
                         ],
-                        "image_url": "https://wow.zamimg.com/uploads/screenshots/normal/1193543-loyal-stoneborn.jpg"
+                        "image_url": "https://wow.zamimg.com/uploads/screenshots/small/1193543.jpg"
                     },
                     {
                         "name": "Spiteful Shade",
@@ -11244,7 +11244,7 @@
                                 "can_immune": false
                             }
                         ],
-                        "image_url": ""
+                        "image_url": "https://wow.zamimg.com/modelviewer/live/webthumbs/npc/50/99378.webp"
                     },
                     {
                         "name": "Soul Fragment",
@@ -11388,7 +11388,7 @@
                                 "can_immune": false
                             }
                         ],
-                        "image_url": ""
+                        "image_url": "https://wow.zamimg.com/modelviewer/live/webthumbs/npc/218/94426.webp"
                     },
                     {
                         "name": "Corrupted Machinist",
@@ -11411,7 +11411,7 @@
                                 "can_immune": true
                             }
                         ],
-                        "image_url": ""
+                        "image_url": "https://wow.zamimg.com/modelviewer/live/webthumbs/npc/150/118422.webp"
                     },
                     {
                         "name": "Explosive Bomberbot",
@@ -11487,7 +11487,7 @@
                                 "can_immune": true
                             }
                         ],
-                        "image_url": "https://wow.zamimg.com/uploads/screenshots/normal/329556-turnip-punching-bag.jpg"
+                        "image_url": "https://wow.zamimg.com/uploads/screenshots/small/365736.jpg"
                     },
                     {
                         "name": "Raest Magespear",
@@ -11566,7 +11566,7 @@
                                 "can_immune": false
                             }
                         ],
-                        "image_url": "https://wow.zamimg.com/uploads/screenshots/normal/625563-raest-magespear.jpg"
+                        "image_url": "https://wow.zamimg.com/uploads/screenshots/small/625563.jpg"
                     },
                     {
                         "name": "Sigryn",
@@ -11615,7 +11615,7 @@
                                 "can_immune": false
                             }
                         ],
-                        "image_url": "https://wow.zamimg.com/uploads/screenshots/normal/666312-sigryn.jpg"
+                        "image_url": "https://wow.zamimg.com/uploads/screenshots/small/666312.jpg"
                     },
                     {
                         "name": "Runeseer Faljar",
@@ -11656,7 +11656,7 @@
                                 "can_immune": false
                             }
                         ],
-                        "image_url": "https://wow.zamimg.com/uploads/screenshots/normal/666311-runeseer-faljar.jpg"
+                        "image_url": "https://wow.zamimg.com/uploads/screenshots/small/666311.jpg"
                     },
                     {
                         "name": "Jarl Velbrand",
@@ -11708,7 +11708,7 @@
                                 "can_immune": true
                             }
                         ],
-                        "image_url": "https://wow.zamimg.com/uploads/screenshots/normal/666314-jarl-velbrand.jpg"
+                        "image_url": "https://wow.zamimg.com/uploads/screenshots/small/666314.jpg"
                     },
                     {
                         "name": "Inquisitor Variss",
@@ -11763,7 +11763,7 @@
                                 "can_immune": true
                             }
                         ],
-                        "image_url": "https://wow.zamimg.com/uploads/screenshots/normal/654890-inquisitor-variss.jpg"
+                        "image_url": "https://wow.zamimg.com/uploads/screenshots/small/654890.jpg"
                     },
                     {
                         "name": "Tormenting Eye",
@@ -11821,7 +11821,7 @@
                                 "can_immune": true
                             }
                         ],
-                        "image_url": "https://wow.zamimg.com/uploads/screenshots/normal/666131-nether-horror.jpg"
+                        "image_url": "https://wow.zamimg.com/uploads/screenshots/small/666131.jpg"
                     },
                     {
                         "name": "Hand from Beyond",
@@ -11838,7 +11838,7 @@
                                 "can_immune": true
                             }
                         ],
-                        "image_url": "https://wow.zamimg.com/uploads/screenshots/normal/755181-hand-from-beyond.jpg"
+                        "image_url": "https://wow.zamimg.com/uploads/screenshots/small/755181.jpg"
                     },
                     {
                         "name": "Ethereal Transmorpher",
@@ -11877,7 +11877,7 @@
                                 "can_immune": false
                             }
                         ],
-                        "image_url": "https://wow.zamimg.com/uploads/screenshots/normal/971084-ethereal-transmorpher.jpg"
+                        "image_url": "https://wow.zamimg.com/uploads/screenshots/small/971084.jpg"
                     },
                     {
                         "name": "Shadowlands Wormhole",
@@ -11941,7 +11941,7 @@
                                 "can_immune": false
                             }
                         ],
-                        "image_url": ""
+                        "image_url": "https://wow.zamimg.com/modelviewer/live/webthumbs/npc/190/29886.webp"
                     },
                     {
                         "name": "Spiteful Shade",
@@ -12021,7 +12021,7 @@
                                 "can_immune": false
                             }
                         ],
-                        "image_url": ""
+                        "image_url": "https://wow.zamimg.com/modelviewer/live/webthumbs/npc/50/99378.webp"
                     },
                     {
                         "name": "Timecap'n Hooktail",
@@ -12204,7 +12204,7 @@
                                 "can_immune": false
                             }
                         ],
-                        "image_url": "https://wow.zamimg.com/uploads/screenshots/normal/1097600-timecapn-hooktail.jpg"
+                        "image_url": "https://wow.zamimg.com/uploads/screenshots/small/1097600.jpg"
                     },
                     {
                         "name": "Containment Cell",
@@ -12221,7 +12221,7 @@
                                 "can_immune": true
                             }
                         ],
-                        "image_url": ""
+                        "image_url": "https://wow.zamimg.com/modelviewer/live/webthumbs/npc/96/99936.webp"
                     },
                     {
                         "name": "Zo'phex",
@@ -12416,7 +12416,7 @@
                                 "can_immune": false
                             }
                         ],
-                        "image_url": "https://wow.zamimg.com/uploads/screenshots/normal/1150315-zophex.jpg"
+                        "image_url": "https://wow.zamimg.com/uploads/screenshots/small/1150315.jpg"
                     },
                     {
                         "name": "P.O.S.T. Master",
@@ -12463,7 +12463,7 @@
                                 "can_immune": false
                             }
                         ],
-                        "image_url": "https://wow.zamimg.com/uploads/screenshots/normal/1150313-p-o-s-t-master.jpg"
+                        "image_url": "https://wow.zamimg.com/uploads/screenshots/small/1150313.jpg"
                     },
                     {
                         "name": "Hylbrande",
@@ -12621,7 +12621,7 @@
                                 "can_immune": true
                             }
                         ],
-                        "image_url": "https://wow.zamimg.com/uploads/screenshots/normal/1191138-hylbrande.jpg"
+                        "image_url": "https://wow.zamimg.com/uploads/screenshots/small/1191138.jpg"
                     },
                     {
                         "name": "Smuggled Creature",
@@ -12643,7 +12643,7 @@
                                 "can_immune": false
                             }
                         ],
-                        "image_url": ""
+                        "image_url": "https://wow.zamimg.com/modelviewer/live/webthumbs/npc/60/93756.webp"
                     },
                     {
                         "name": "So'azmi",
@@ -12767,7 +12767,7 @@
                                 "can_immune": false
                             }
                         ],
-                        "image_url": "https://wow.zamimg.com/uploads/screenshots/normal/1150314-soazmi.jpg"
+                        "image_url": "https://wow.zamimg.com/uploads/screenshots/small/1150314.jpg"
                     },
                     {
                         "name": "Corsair Cannoneer",
@@ -12789,7 +12789,7 @@
                                 "can_immune": false
                             }
                         ],
-                        "image_url": "https://wow.zamimg.com/uploads/screenshots/normal/1209198-corsair-cannoneer.jpg"
+                        "image_url": "https://wow.zamimg.com/uploads/screenshots/small/1209198.jpg"
                     },
                     {
                         "name": "P.O.S.T. Worker",
@@ -12840,7 +12840,7 @@
                                 "can_immune": false
                             }
                         ],
-                        "image_url": ""
+                        "image_url": "https://wow.zamimg.com/modelviewer/live/webthumbs/npc/195/68547.webp"
                     },
                     {
                         "name": "Defective Sorter",
@@ -12868,7 +12868,7 @@
                                 "can_immune": false
                             }
                         ],
-                        "image_url": ""
+                        "image_url": "https://wow.zamimg.com/modelviewer/live/webthumbs/npc/56/100408.webp"
                     },
                     {
                         "name": "Vault Purifier",
@@ -12942,7 +12942,7 @@
                                 "can_immune": false
                             }
                         ],
-                        "image_url": ""
+                        "image_url": "https://wow.zamimg.com/modelviewer/live/webthumbs/npc/143/100495.webp"
                     },
                     {
                         "name": "Achillite",
@@ -13038,7 +13038,7 @@
                                 "can_immune": true
                             }
                         ],
-                        "image_url": ""
+                        "image_url": "https://wow.zamimg.com/modelviewer/live/webthumbs/npc/180/101044.webp"
                     },
                     {
                         "name": "Alcruux",
@@ -13086,7 +13086,7 @@
                                 "can_immune": false
                             }
                         ],
-                        "image_url": ""
+                        "image_url": "https://wow.zamimg.com/modelviewer/live/webthumbs/npc/175/101039.webp"
                     },
                     {
                         "name": "Unruly Patron",
@@ -13119,7 +13119,7 @@
                                 "can_immune": true
                             }
                         ],
-                        "image_url": "https://wow.zamimg.com/uploads/screenshots/normal/1030196-unruly-patron.jpg"
+                        "image_url": "https://wow.zamimg.com/uploads/screenshots/small/1030196.jpg"
                     },
                     {
                         "name": "Brawling Patron",
@@ -13147,7 +13147,7 @@
                                 "can_immune": false
                             }
                         ],
-                        "image_url": ""
+                        "image_url": "https://wow.zamimg.com/modelviewer/live/webthumbs/npc/168/101544.webp"
                     },
                     {
                         "name": "Zo'gron",
@@ -13214,7 +13214,7 @@
                                 "can_immune": false
                             }
                         ],
-                        "image_url": "https://wow.zamimg.com/uploads/screenshots/normal/1191133-zogron.jpg"
+                        "image_url": "https://wow.zamimg.com/uploads/screenshots/small/1191133.jpg"
                     },
                     {
                         "name": "Disruptive Patron",
@@ -13264,7 +13264,7 @@
                                 "can_immune": true
                             }
                         ],
-                        "image_url": ""
+                        "image_url": "https://wow.zamimg.com/modelviewer/live/webthumbs/npc/151/101271.webp"
                     },
                     {
                         "name": "Venza Goldfuse",
@@ -13340,7 +13340,7 @@
                                 "can_immune": false
                             }
                         ],
-                        "image_url": ""
+                        "image_url": "https://wow.zamimg.com/modelviewer/live/webthumbs/npc/212/100564.webp"
                     },
                     {
                         "name": "So'leah",
@@ -13519,7 +13519,7 @@
                                 "can_immune": false
                             }
                         ],
-                        "image_url": "https://wow.zamimg.com/uploads/screenshots/normal/1097604-soleah.jpg"
+                        "image_url": "https://wow.zamimg.com/uploads/screenshots/small/1097604.jpg"
                     },
                     {
                         "name": "Corsair Brute",
@@ -13586,7 +13586,7 @@
                                 "can_immune": true
                             }
                         ],
-                        "image_url": ""
+                        "image_url": "https://wow.zamimg.com/modelviewer/live/webthumbs/npc/172/81324.webp"
                     },
                     {
                         "name": "So' Cartel Assassin",
@@ -13608,7 +13608,7 @@
                                 "can_immune": false
                             }
                         ],
-                        "image_url": ""
+                        "image_url": "https://wow.zamimg.com/modelviewer/live/webthumbs/npc/33/101153.webp"
                     },
                     {
                         "name": "Customs Security",
@@ -13645,7 +13645,7 @@
                                 "can_immune": true
                             }
                         ],
-                        "image_url": "https://wow.zamimg.com/uploads/screenshots/normal/1024185-customs-security.jpg"
+                        "image_url": "https://wow.zamimg.com/uploads/screenshots/small/1024185.jpg"
                     },
                     {
                         "name": "Armored Overseer",
@@ -13672,7 +13672,7 @@
                                 "can_immune": true
                             }
                         ],
-                        "image_url": ""
+                        "image_url": "https://wow.zamimg.com/modelviewer/live/webthumbs/npc/10/100874.webp"
                     },
                     {
                         "name": "Interrogation Specialist",
@@ -13713,7 +13713,7 @@
                                 "can_immune": true
                             }
                         ],
-                        "image_url": ""
+                        "image_url": "https://wow.zamimg.com/modelviewer/live/webthumbs/npc/13/100877.webp"
                     },
                     {
                         "name": "Support Officer",
@@ -13758,7 +13758,7 @@
                                 "can_immune": true
                             }
                         ],
-                        "image_url": ""
+                        "image_url": "https://wow.zamimg.com/modelviewer/live/webthumbs/npc/12/100876.webp"
                     },
                     {
                         "name": "Murkbrine Wavejumper",
@@ -13841,7 +13841,7 @@
                                 "can_immune": false
                             }
                         ],
-                        "image_url": ""
+                        "image_url": "https://wow.zamimg.com/modelviewer/live/webthumbs/npc/156/101788.webp"
                     },
                     {
                         "name": "Murkbrine Fishmancer",
@@ -13877,7 +13877,7 @@
                                 "can_immune": false
                             }
                         ],
-                        "image_url": ""
+                        "image_url": "https://wow.zamimg.com/modelviewer/live/webthumbs/npc/157/101789.webp"
                     },
                     {
                         "name": "Murkbrine Shorerunner",
@@ -13892,7 +13892,7 @@
                                 "can_immune": false
                             }
                         ],
-                        "image_url": ""
+                        "image_url": "https://wow.zamimg.com/modelviewer/live/webthumbs/npc/154/101786.webp"
                     },
                     {
                         "name": "Coastwalker Goliath",
@@ -13948,7 +13948,7 @@
                                 "can_immune": false
                             }
                         ],
-                        "image_url": ""
+                        "image_url": "https://wow.zamimg.com/modelviewer/live/webthumbs/npc/158/101790.webp"
                     },
                     {
                         "name": "Stormforged Guardian",
@@ -13979,7 +13979,7 @@
                                 "can_immune": true
                             }
                         ],
-                        "image_url": ""
+                        "image_url": "https://wow.zamimg.com/modelviewer/live/webthumbs/npc/30/67358.webp"
                     },
                     {
                         "name": "Mawsworn Ravager",
@@ -13997,7 +13997,7 @@
                                 "can_immune": true
                             }
                         ],
-                        "image_url": ""
+                        "image_url": "https://wow.zamimg.com/modelviewer/live/webthumbs/npc/252/92412.webp"
                     },
                     {
                         "name": "Mawsworn Ripper",
@@ -14018,7 +14018,7 @@
                                 "can_immune": false
                             }
                         ],
-                        "image_url": ""
+                        "image_url": "https://wow.zamimg.com/modelviewer/live/webthumbs/npc/254/92414.webp"
                     },
                     {
                         "name": "Bazaar Strongarm",
@@ -14095,7 +14095,7 @@
                                 "can_immune": false
                             }
                         ],
-                        "image_url": ""
+                        "image_url": "https://wow.zamimg.com/modelviewer/live/webthumbs/npc/169/102057.webp"
                     },
                     {
                         "name": "Gatewarden Zo'mazz",
@@ -14123,7 +14123,7 @@
                                 "can_immune": true
                             }
                         ],
-                        "image_url": "https://wow.zamimg.com/uploads/screenshots/normal/1024186-gatewarden-zomazz.jpg"
+                        "image_url": "https://wow.zamimg.com/uploads/screenshots/small/1024186.jpg"
                     },
                     {
                         "name": "Cartel Lackey",
@@ -14175,7 +14175,7 @@
                                 "can_immune": true
                             }
                         ],
-                        "image_url": ""
+                        "image_url": "https://wow.zamimg.com/modelviewer/live/webthumbs/npc/108/92780.webp"
                     },
                     {
                         "name": "Oasis Security",
@@ -14291,7 +14291,7 @@
                                 "can_immune": false
                             }
                         ],
-                        "image_url": ""
+                        "image_url": "https://wow.zamimg.com/modelviewer/live/webthumbs/npc/88/101464.webp"
                     },
                     {
                         "name": "Hourglass Tidesage",
@@ -14318,7 +14318,7 @@
                                 "can_immune": true
                             }
                         ],
-                        "image_url": ""
+                        "image_url": "https://wow.zamimg.com/modelviewer/live/webthumbs/npc/92/101468.webp"
                     },
                     {
                         "name": "Commander Zo'far",
@@ -14375,7 +14375,7 @@
                                 "can_immune": false
                             }
                         ],
-                        "image_url": ""
+                        "image_url": "https://wow.zamimg.com/modelviewer/live/webthumbs/npc/97/101473.webp"
                     },
                     {
                         "name": "Tracker Zo'korss",
@@ -14408,7 +14408,7 @@
                                 "can_immune": true
                             }
                         ],
-                        "image_url": ""
+                        "image_url": "https://wow.zamimg.com/modelviewer/live/webthumbs/npc/98/101474.webp"
                     },
                     {
                         "name": "Market Peacekeeper",
@@ -14439,7 +14439,7 @@
                                 "can_immune": false
                             }
                         ],
-                        "image_url": ""
+                        "image_url": "https://wow.zamimg.com/modelviewer/live/webthumbs/npc/99/101475.webp"
                     },
                     {
                         "name": "Veteran Sparkcaster",
@@ -14472,7 +14472,7 @@
                                 "can_immune": true
                             }
                         ],
-                        "image_url": ""
+                        "image_url": "https://wow.zamimg.com/modelviewer/live/webthumbs/npc/100/101476.webp"
                     },
                     {
                         "name": "Commerce Enforcer",
@@ -14519,7 +14519,7 @@
                                 "can_immune": false
                             }
                         ],
-                        "image_url": ""
+                        "image_url": "https://wow.zamimg.com/modelviewer/live/webthumbs/npc/101/101477.webp"
                     },
                     {
                         "name": "Cartel Skulker",
@@ -14547,7 +14547,7 @@
                                 "can_immune": false
                             }
                         ],
-                        "image_url": ""
+                        "image_url": "https://wow.zamimg.com/modelviewer/live/webthumbs/npc/102/101734.webp"
                     },
                     {
                         "name": "Burly Deckhand",
@@ -14575,7 +14575,7 @@
                                 "can_immune": false
                             }
                         ],
-                        "image_url": ""
+                        "image_url": "https://wow.zamimg.com/modelviewer/live/webthumbs/npc/81/101457.webp"
                     },
                     {
                         "name": "Ancient Core Hound",
@@ -14611,7 +14611,7 @@
                                 "can_immune": true
                             }
                         ],
-                        "image_url": ""
+                        "image_url": "https://wow.zamimg.com/modelviewer/live/webthumbs/npc/7/101639.webp"
                     },
                     {
                         "name": "Giant Hive Guardian",
@@ -14655,7 +14655,7 @@
                                 "can_immune": false
                             }
                         ],
-                        "image_url": "https://wow.zamimg.com/uploads/screenshots/normal/1222002-giant-hive-guardian.jpg"
+                        "image_url": "https://wow.zamimg.com/uploads/screenshots/small/1222002.jpg"
                     },
                     {
                         "name": "Organic Fruit",
@@ -14711,7 +14711,7 @@
                                 "can_immune": false
                             }
                         ],
-                        "image_url": ""
+                        "image_url": "https://wow.zamimg.com/modelviewer/live/webthumbs/npc/61/94269.webp"
                     },
                     {
                         "name": "Wriggling Tentacle",
@@ -14767,7 +14767,7 @@
                                 "can_immune": false
                             }
                         ],
-                        "image_url": "https://wow.zamimg.com/uploads/screenshots/normal/1028351-wriggling-tentacle.jpg"
+                        "image_url": "https://wow.zamimg.com/uploads/screenshots/small/1028351.jpg"
                     },
                     {
                         "name": "Elekk Plushie",
@@ -14823,7 +14823,7 @@
                                 "can_immune": false
                             }
                         ],
-                        "image_url": ""
+                        "image_url": "https://wow.zamimg.com/modelviewer/live/webthumbs/npc/58/58170.webp"
                     },
                     {
                         "name": "Glow Stick",
@@ -14879,7 +14879,7 @@
                                 "can_immune": false
                             }
                         ],
-                        "image_url": ""
+                        "image_url": "https://wow.zamimg.com/modelviewer/live/webthumbs/npc/161/101537.webp"
                     },
                     {
                         "name": "Unruly Patron",
@@ -14940,7 +14940,7 @@
                                 "can_immune": false
                             }
                         ],
-                        "image_url": ""
+                        "image_url": "https://wow.zamimg.com/modelviewer/live/webthumbs/npc/170/101546.webp"
                     },
                     {
                         "name": "Leader Xy'viler",
@@ -14981,7 +14981,7 @@
                                 "can_immune": false
                             }
                         ],
-                        "image_url": ""
+                        "image_url": "https://wow.zamimg.com/modelviewer/live/webthumbs/npc/200/101576.webp"
                     },
                     {
                         "name": "Cartel Smuggler",
@@ -15036,7 +15036,7 @@
                                 "can_immune": true
                             }
                         ],
-                        "image_url": ""
+                        "image_url": "https://wow.zamimg.com/modelviewer/live/webthumbs/npc/220/101596.webp"
                     },
                     {
                         "name": "Cartel Muscle",
@@ -15063,7 +15063,7 @@
                                 "can_immune": false
                             }
                         ],
-                        "image_url": ""
+                        "image_url": "https://wow.zamimg.com/modelviewer/live/webthumbs/npc/222/101598.webp"
                     },
                     {
                         "name": "Dantun",
@@ -15138,7 +15138,7 @@
                                 "can_immune": false
                             }
                         ],
-                        "image_url": ""
+                        "image_url": "https://wow.zamimg.com/modelviewer/live/webthumbs/npc/61/100925.webp"
                     },
                     {
                         "name": "Adorned Starseer",
@@ -15170,7 +15170,7 @@
                                 "can_immune": true
                             }
                         ],
-                        "image_url": ""
+                        "image_url": "https://wow.zamimg.com/modelviewer/live/webthumbs/npc/36/101668.webp"
                     },
                     {
                         "name": "Focused Ritualist",
@@ -15206,7 +15206,7 @@
                                 "can_immune": true
                             }
                         ],
-                        "image_url": ""
+                        "image_url": "https://wow.zamimg.com/modelviewer/live/webthumbs/npc/37/101669.webp"
                     },
                     {
                         "name": "Devoted Accomplice",
@@ -15242,7 +15242,7 @@
                                 "can_immune": true
                             }
                         ],
-                        "image_url": ""
+                        "image_url": "https://wow.zamimg.com/modelviewer/live/webthumbs/npc/38/101670.webp"
                     },
                     {
                         "name": "Wandering Pulsar",
@@ -15356,7 +15356,7 @@
                                 "can_immune": false
                             }
                         ],
-                        "image_url": ""
+                        "image_url": "https://wow.zamimg.com/modelviewer/live/webthumbs/npc/46/100910.webp"
                     },
                     {
                         "name": "Vilt",
@@ -15408,7 +15408,7 @@
                                 "can_immune": true
                             }
                         ],
-                        "image_url": ""
+                        "image_url": "https://wow.zamimg.com/modelviewer/live/webthumbs/npc/204/96716.webp"
                     },
                     {
                         "name": "Hips",
@@ -15460,7 +15460,7 @@
                                 "can_immune": false
                             }
                         ],
-                        "image_url": ""
+                        "image_url": "https://wow.zamimg.com/modelviewer/live/webthumbs/npc/63/95807.webp"
                     },
                     {
                         "name": "Dirtwhistle",
@@ -15508,7 +15508,7 @@
                                 "can_immune": false
                             }
                         ],
-                        "image_url": ""
+                        "image_url": "https://wow.zamimg.com/modelviewer/live/webthumbs/npc/159/93855.webp"
                     },
                     {
                         "name": "Enraged Direhorn",
@@ -15541,7 +15541,7 @@
                                 "can_immune": false
                             }
                         ],
-                        "image_url": ""
+                        "image_url": "https://wow.zamimg.com/modelviewer/live/webthumbs/npc/81/47441.webp"
                     },
                     {
                         "name": "Toxic Saurid",
@@ -15585,7 +15585,7 @@
                                 "can_immune": false
                             }
                         ],
-                        "image_url": "https://wow.zamimg.com/uploads/screenshots/normal/1029670-toxic-saurid.jpg"
+                        "image_url": "https://wow.zamimg.com/uploads/screenshots/small/1029670.jpg"
                     },
                     {
                         "name": "Rat of Unusual Size",
@@ -15629,7 +15629,7 @@
                                 "can_immune": false
                             }
                         ],
-                        "image_url": "https://wow.zamimg.com/uploads/screenshots/normal/1029505-rat-of-unusual-size.jpg"
+                        "image_url": "https://wow.zamimg.com/uploads/screenshots/small/1029505.jpg"
                     },
                     {
                         "name": "Frenzied Nightclaw",
@@ -15660,7 +15660,7 @@
                                 "can_immune": false
                             }
                         ],
-                        "image_url": ""
+                        "image_url": "https://wow.zamimg.com/modelviewer/live/webthumbs/npc/63/101951.webp"
                     },
                     {
                         "name": "Stormbound Breaker",
@@ -15705,7 +15705,7 @@
                                 "can_immune": false
                             }
                         ],
-                        "image_url": ""
+                        "image_url": "https://wow.zamimg.com/modelviewer/live/webthumbs/npc/254/101886.webp"
                     },
                     {
                         "name": "Soul Fragment",
@@ -15849,7 +15849,7 @@
                                 "can_immune": false
                             }
                         ],
-                        "image_url": ""
+                        "image_url": "https://wow.zamimg.com/modelviewer/live/webthumbs/npc/218/94426.webp"
                     },
                     {
                         "name": "Tuskarr Training Dummy",
@@ -15884,7 +15884,7 @@
                                 "can_immune": true
                             }
                         ],
-                        "image_url": ""
+                        "image_url": "https://wow.zamimg.com/modelviewer/live/webthumbs/npc/202/106442.webp"
                     },
                     {
                         "name": "Black Dragon's Challenge Dummy",
@@ -15899,7 +15899,7 @@
                                 "can_immune": false
                             }
                         ],
-                        "image_url": ""
+                        "image_url": "https://wow.zamimg.com/modelviewer/live/webthumbs/npc/177/110513.webp"
                     },
                     {
                         "name": "Corrupted Machinist",
@@ -15922,7 +15922,7 @@
                                 "can_immune": true
                             }
                         ],
-                        "image_url": ""
+                        "image_url": "https://wow.zamimg.com/modelviewer/live/webthumbs/npc/150/118422.webp"
                     },
                     {
                         "name": "Explosive Bomberbot",
@@ -15941,7 +15941,7 @@
                                 "can_immune": true
                             }
                         ],
-                        "image_url": ""
+                        "image_url": "https://wow.zamimg.com/modelviewer/live/webthumbs/npc/248/122104.webp"
                     },
                     {
                         "name": "Bazaar Overseer",
@@ -15969,7 +15969,7 @@
                                 "can_immune": false
                             }
                         ],
-                        "image_url": ""
+                        "image_url": "https://wow.zamimg.com/modelviewer/live/webthumbs/npc/173/129965.webp"
                     },
                     {
                         "name": "Under-Lord Vik'tis",
@@ -16007,7 +16007,7 @@
                                 "can_immune": true
                             }
                         ],
-                        "image_url": ""
+                        "image_url": "https://wow.zamimg.com/modelviewer/live/webthumbs/npc/9/115721.webp"
                     }
                 ]
             }

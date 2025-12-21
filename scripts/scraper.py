@@ -7,8 +7,15 @@ import sys
 import argparse
 from typing import Dict, List, Tuple, Any
 
+from selenium import webdriver
+from selenium.common.exceptions import TimeoutException
+from selenium.webdriver.chrome.service import Service as ChromeService
+from selenium.webdriver.support.ui import WebDriverWait
+from webdriver_manager.chrome import ChromeDriverManager
+
 RAIDS = {
     "Manaforge Omega": 16178,
+    "Liberation of Undermine": 15522,
 }
 
 DUNGEONS = {
@@ -150,12 +157,59 @@ class WoWScraper:
 
         return ""
 
+    def _get_content_with_selenium_sync(self, url: str) -> str:
+        """Get content with selenium in a sync function"""
+        options = webdriver.ChromeOptions()
+        options.add_argument("--headless")
+        options.add_argument("--no-sandbox")
+        options.add_argument("--disable-dev-shm-usage")
+        options.add_argument("--disable-gpu")
+        options.add_argument("user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Safari/537.36")
+
+        driver = None
+        try:
+            service = ChromeService(ChromeDriverManager().install())
+            driver = webdriver.Chrome(service=service, options=options)
+            driver.get(url)
+            # try:
+            #     WebDriverWait(driver, 10).until(
+            #         lambda d: d.execute_script("return typeof lv_screenshots !== 'undefined' && lv_screenshots.length > 0")
+            #     )
+            # except TimeoutException:
+            #     print(f"Timed out waiting for screenshots on {url}. Proceeding with current page content.")
+
+            return driver.page_source
+        except Exception as e:
+            print(f"An error occurred while fetching {url} with Selenium: {e}")
+            return ""
+        finally:
+            if driver:
+                driver.quit()
+
+    async def get_content_with_selenium(self, url: str) -> str:
+        """Get content with selenium, with rate limiting"""
+        async with self.semaphore:
+            print(f"Fetching {url} with Selenium...")
+            loop = asyncio.get_running_loop()
+            return await loop.run_in_executor(
+                None, self._get_content_with_selenium_sync, url
+            )
+
     def parse_npc_image(self, html_content: str, npc_name: str | None = None) -> str:
         """Parse NPC image URL from HTML content"""
         if not html_content:
             return ""
 
         soup = BeautifulSoup.BeautifulSoup(html_content, 'html.parser')
+
+        # 0) Find img src under div with id="infobox-sticky-ss"
+        infobox_div = soup.find('div', id='infobox-sticky-ss')
+        if infobox_div:
+            img_tag = infobox_div.find('img')
+            if img_tag:
+                src = img_tag.get('src')
+                if src and src != "https://wow.zamimg.com/images/logos/share-icon.png":
+                    return src
 
         # 1) Prefer Open Graph meta image from <head>
         og_image = soup.find('meta', attrs={'property': 'og:image'})
@@ -184,7 +238,13 @@ class WoWScraper:
     async def scrape_npc_image(self, session: aiohttp.ClientSession, npc_id: int, npc_name: str | None = None) -> str:
         """Scrape NPC image URL asynchronously"""
         url = f"https://www.wowhead.com/npc={npc_id}"
-        html_content = await self.get_content(session, url)
+
+        html_content = await self.get_content_with_selenium(url)
+
+        if not html_content:
+            print(f"Selenium fetch failed for {url}. Falling back to static fetch.")
+            html_content = await self.get_content(session, url)
+
         return self.parse_npc_image(html_content, npc_name)
 
     def parse_npcs_from_html(self, html_content: str, boss_only: bool = False) -> List[Dict[str, Any]]:
@@ -227,18 +287,17 @@ class WoWScraper:
                 task = self.scrape_spells(session, npc_id)
                 npc_tasks.append((npc, task))
 
-        # Execute all NPC spell scraping and image scraping concurrently
+        # Execute all NPC spell scraping concurrently (no images yet)
         npcs_with_spells = []
         for npc, task in npc_tasks:
             spells = await task
             npc_id = npc.get('id')
-            image_url = await self.scrape_npc_image(session, npc_id, npc.get('name')) if npc_id else ""
             npc_data = {
                 'name': npc.get('name'),
                 'id': npc_id,
                 'is_boss': npc.get('boss') == 1,
                 'spells': spells,
-                'image_url': image_url
+                'image_url': ""
             }
             npcs_with_spells.append(npc_data)
             print(f"NPC: {npc_data['name']} (ID: {npc_data['id']}) - {len(spells)} spells")
@@ -308,7 +367,7 @@ async def main():
     with open('instances.json', 'w') as f:
         json.dump(instances, f, indent=4)
 
-    print("Scraping completed successfully!")
+    print("Scraping completed successfully (without images)!")
 
 
 def refine():
@@ -427,10 +486,76 @@ def refine():
     print("Processing complete. All spells have been updated with the 'can_immune' flag.")
 
 
+def scrape_images_synchronously():
+    """Scrape images for all NPCs synchronously using Selenium"""
+    print("\nStarting synchronous image scraping...")
+
+    # Load the refined instances.json file
+    with open('instances.json', 'r', encoding='utf-8') as f:
+        data = json.load(f)
+
+    # Ensure we have the correct structure
+    if 'instances' not in data:
+        raids = data.get('raids', {})
+        dungeons = data.get('dungeons', {})
+        data = {'instances': {'raids': raids, 'dungeons': dungeons}}
+
+    scraper = WoWScraper()
+    total_npcs = 0
+    processed_npcs = 0
+
+    # Count total NPCs
+    for raid_data in data['instances']['raids'].values():
+        total_npcs += len(raid_data.get('npcs', []))
+    for dungeon_data in data['instances']['dungeons'].values():
+        total_npcs += len(dungeon_data.get('npcs', []))
+
+    print(f"Found {total_npcs} NPCs to scrape images for...\n")
+
+    # Scrape images for raids
+    for raid_name, raid_data in data['instances']['raids'].items():
+        print(f"Processing raid: {raid_name}")
+        if 'npcs' in raid_data:
+            for npc in raid_data['npcs']:
+                npc_id = npc.get('id')
+                npc_name = npc.get('name')
+                if npc_id:
+                    processed_npcs += 1
+                    print(f"  [{processed_npcs}/{total_npcs}] Scraping image for {npc_name} (ID: {npc_id})...")
+                    url = f"https://www.wowhead.com/npc={npc_id}"
+                    html_content = scraper._get_content_with_selenium_sync(url)
+                    image_url = scraper.parse_npc_image(html_content, npc_name)
+                    npc['image_url'] = image_url
+                    print(f"      Image URL: {image_url if image_url else 'Not found'}")
+
+    # Scrape images for dungeons
+    for dungeon_name, dungeon_data in data['instances']['dungeons'].items():
+        print(f"Processing dungeon: {dungeon_name}")
+        if 'npcs' in dungeon_data:
+            for npc in dungeon_data['npcs']:
+                npc_id = npc.get('id')
+                npc_name = npc.get('name')
+                if npc_id:
+                    processed_npcs += 1
+                    print(f"  [{processed_npcs}/{total_npcs}] Scraping image for {npc_name} (ID: {npc_id})...")
+                    url = f"https://www.wowhead.com/npc={npc_id}"
+                    html_content = scraper._get_content_with_selenium_sync(url)
+                    image_url = scraper.parse_npc_image(html_content, npc_name)
+                    npc['image_url'] = image_url
+                    print(f"      Image URL: {image_url if image_url else 'Not found'}")
+
+    # Save the updated data
+    with open('instances.json', 'w', encoding='utf-8') as f:
+        json.dump(data, f, indent=4, ensure_ascii=False)
+
+    print(f"\nImage scraping complete! Processed {processed_npcs} NPCs.")
+
+
 async def main_with_scrape():
     """Main entry point that optionally scrapes then refines"""
-    await main()
-    refine()
+    # await main()
+    # refine()
+    scrape_images_synchronously()
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description='Scrape and refine WoW instance data')
