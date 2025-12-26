@@ -13,19 +13,83 @@ from selenium.webdriver.chrome.service import Service as ChromeService
 from selenium.webdriver.support.ui import WebDriverWait
 from webdriver_manager.chrome import ChromeDriverManager
 
+# RAIDS = {
+#     "Liberation of Undermine": 15522,
+#     "Manaforge Omega": 16178,
+# }
+
 RAIDS = {
-    "Manaforge Omega": 16178,
-    "Liberation of Undermine": 15522,
+    "Liberation of Undermine": {
+        "id": 15522,
+        "bosses": [
+            ["The Geargrinder"], ["Flarendo", "Torq"], ["Rik Reverb"], ["Stix Bunkjunker"],
+            ["Sprocketmonger Lockenstock"], ["Mug'Zee"], ["Chrome King Gallywix"]
+        ]
+    },
+    "Manaforge Omega": {
+        "id": 16178,
+        "bosses": [
+            ["Plexus Sentinel"], ["Loom'ithar"], ["Soulbinder Naazindhri"], ["Forgeweaver Araz"],
+            ["Adarus Duskblaze", "Velaryn Bloodwrath", "Ilyssa Darksorrow"], ["Fractillus"], ["Nexus-King Salhadaar"],
+            ["Dimensius"]
+        ]
+    }
 }
 
+# DUNGEONS = {
+#     "Ara-Kara, City of Echoes": 15093,
+#     "The Dawnbreaker": 14971,
+#     "Priory of the Sacred Flame": 14954,
+#     "Operation: Floodgate": 15452,
+#     "Eco-Dome Al'dani": 16104,
+#     "Halls of Atonement": 12831,
+#     "Tazavesh, the Veiled Market": 13577,
+# }
+
 DUNGEONS = {
-    "Ara-Kara, City of Echoes": 15093,
-    "The Dawnbreaker": 14971,
-    "Priory of the Sacred Flame": 14954,
-    "Operation: Floodgate": 15452,
-    "Eco-Dome Al'dani": 16104,
-    "Halls of Atonement": 12831,
-    "Tazavesh, the Veiled Market": 13577,
+    "Ara-Kara, City of Echoes": {
+        "id": 15093,
+        "bosses": [
+            ["Avanoxx"], ["Anub'zekt"], ["Ki'katal the Harvester"]
+        ]
+    },
+    "The Dawnbreaker": {
+        "id": 14971,
+        "bosses": [
+            ["Speaker Shadowcrown"], ["Anub'ikkaj"], ["Rasha'nan"]
+        ]
+    },
+    "Priory of the Sacred Flame": {
+        "id": 14954,
+        "bosses": [
+            ["Captain Dailcry"], ["Baron Braunpyke"], ["Prioress Murrpray"]
+        ]
+    },
+    "Operation: Floodgate": {
+        "id": 15452,
+        "bosses": [
+            ["Big M.O.M.M.A."], ["Keeza Quickfuse", "Bront"], ["Swampface"], ["Geezle Gigazap"]
+        ]
+    },
+    "Eco-Dome Al'dani": {
+        "id": 16104,
+        "bosses": [
+            ["Azhiccar"], ["Taah'bat", "A'wazj"], ["Soul-Scribe"]
+        ]
+    },
+    "Halls of Atonement": {
+        "id": 12831,
+        "bosses": [
+            ["Halkias"], ["Echelon"], ["High Adjudicator Aleez"], ["Lord Chamberlain"]
+        ]
+    },
+    "Tazavesh, the Veiled Market": {
+        "id": 13577,
+        "bosses": [
+            ["Zo'phex"], ["Alcruux", "Achillite", "Venza Goldfuse"], ["P.O.S.T. Master"], ["Zo'gron"],
+            ["So'azmi"], ["Hylbrande"], ["Timecap'n Hooktail"], ["So'leah"]
+        ]
+    },
 }
 
 class WoWScraper:
@@ -164,19 +228,13 @@ class WoWScraper:
         options.add_argument("--no-sandbox")
         options.add_argument("--disable-dev-shm-usage")
         options.add_argument("--disable-gpu")
+        options.add_argument("--enable-unsafe-swiftshader")
         options.add_argument("user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Safari/537.36")
 
         driver = None
         try:
-            service = ChromeService(ChromeDriverManager().install())
-            driver = webdriver.Chrome(service=service, options=options)
+            driver = webdriver.Chrome(options=options)
             driver.get(url)
-            # try:
-            #     WebDriverWait(driver, 10).until(
-            #         lambda d: d.execute_script("return typeof lv_screenshots !== 'undefined' && lv_screenshots.length > 0")
-            #     )
-            # except TimeoutException:
-            #     print(f"Timed out waiting for screenshots on {url}. Proceeding with current page content.")
 
             return driver.page_source
         except Exception as e:
@@ -270,7 +328,7 @@ class WoWScraper:
 
         return npcs_json
 
-    async def scrape_npcs(self, session: aiohttp.ClientSession, html_content: str, boss_only: bool = False) -> List[Dict[str, Any]]:
+    async def scrape_npcs(self, session: aiohttp.ClientSession, html_content: str, bosses: List[List[str]], boss_only: bool = False) -> List[Dict[str, Any]]:
         """Scrape NPCs and their spells asynchronously"""
         npcs_json = self.parse_npcs_from_html(html_content, boss_only)
 
@@ -278,6 +336,8 @@ class WoWScraper:
             return []
 
         print(f"Found {len(npcs_json)} NPCs to process")
+
+        all_boss_names = {boss_name for encounter in bosses for boss_name in encounter}
 
         # Create tasks for all NPC spell scraping
         npc_tasks = []
@@ -292,26 +352,66 @@ class WoWScraper:
         for npc, task in npc_tasks:
             spells = await task
             npc_id = npc.get('id')
+            npc_name = npc.get('name')
+
+            is_boss = npc_name in all_boss_names
+
             npc_data = {
-                'name': npc.get('name'),
+                'name': npc_name,
                 'id': npc_id,
-                'is_boss': npc.get('boss') == 1,
+                'is_boss': is_boss,
                 'spells': spells,
                 'image_url': ""
             }
+
+            if is_boss:
+                for i, encounter in enumerate(bosses):
+                    if npc_name in encounter:
+                        npc_data['encounter_id'] = i
+                        break
+
             npcs_with_spells.append(npc_data)
             print(f"NPC: {npc_data['name']} (ID: {npc_data['id']}) - {len(spells)} spells")
 
         return npcs_with_spells
 
-    async def scrape_instance(self, session: aiohttp.ClientSession, name: str, instance_id: int, boss_only: bool = False) -> Tuple[str, Dict[str, Any]]:
+    async def scrape_instance(self, session: aiohttp.ClientSession, name: str, instance_id: int, bosses: List[List[str]], boss_only: bool = False) -> Tuple[str, Dict[str, Any]]:
         """Scrape a single instance (raid or dungeon)"""
         url = f"https://www.wowhead.com/zone={instance_id}"
         print(f"Scraping {'raid' if boss_only else 'dungeon'}: {name} (ID: {instance_id}) with URL: {url}")
 
         html_content = await self.get_content(session, url)
         if html_content:
-            mob_data = await self.scrape_npcs(session, html_content, boss_only)
+            mob_data = await self.scrape_npcs(session, html_content, bosses, boss_only)
+
+            if name == "Liberation of Undermine":
+                print("Adding special NPC 'Torq' for Liberation of Undermine...")
+                torq_id = 229177
+                torq_name = "Torq"
+
+                if not any(npc['id'] == torq_id for npc in mob_data):
+                    torq_spells = await self.scrape_spells(session, torq_id)
+
+                    all_boss_names = {boss_name for encounter in bosses for boss_name in encounter}
+                    is_boss = torq_name in all_boss_names
+
+                    torq_npc_data = {
+                        'name': torq_name,
+                        'id': torq_id,
+                        'is_boss': is_boss,
+                        'spells': torq_spells,
+                        'image_url': ""
+                    }
+
+                    if is_boss:
+                        for i, encounter in enumerate(bosses):
+                            if torq_name in encounter:
+                                torq_npc_data['encounter_id'] = i
+                                break
+
+                    mob_data.append(torq_npc_data)
+                    print(f"NPC: {torq_npc_data['name']} (ID: {torq_npc_data['id']}) - {len(torq_spells)} spells")
+
             return name, {
                 'id': instance_id,
                 'npcs': mob_data
@@ -321,20 +421,24 @@ class WoWScraper:
 
     async def scrape_raids(self, session: aiohttp.ClientSession) -> Dict[str, Any]:
         """Scrape all raids concurrently"""
-        tasks = [
-            self.scrape_instance(session, name, raid_id, boss_only=True)
-            for name, raid_id in RAIDS.items()
-        ]
+        tasks = []
+        for name, raid_info in RAIDS.items():
+            if isinstance(raid_info, int):
+                tasks.append(self.scrape_instance(session, name, raid_info, [], boss_only=True))
+            else:
+                tasks.append(self.scrape_instance(session, name, raid_info['id'], raid_info.get('bosses', []), boss_only=True))
 
         results = await asyncio.gather(*tasks)
         return dict(results)
 
     async def scrape_dungeons(self, session: aiohttp.ClientSession) -> Dict[str, Any]:
         """Scrape all dungeons concurrently"""
-        tasks = [
-            self.scrape_instance(session, name, dungeon_id, boss_only=False)
-            for name, dungeon_id in DUNGEONS.items()
-        ]
+        tasks = []
+        for name, dungeon_info in DUNGEONS.items():
+            if isinstance(dungeon_info, int):
+                tasks.append(self.scrape_instance(session, name, dungeon_info, [], boss_only=False))
+            else:
+                tasks.append(self.scrape_instance(session, name, dungeon_info['id'], dungeon_info.get('bosses', []), boss_only=False))
 
         results = await asyncio.gather(*tasks)
         return dict(results)
@@ -360,8 +464,7 @@ class WoWScraper:
                 'dungeons': dungeons
             }
 
-async def main():
-    scraper = WoWScraper(max_concurrent_requests=15)  # Adjust based on your needs
+async def main(scraper: WoWScraper):
     instances = await scraper.scrape_all()
 
     with open('instances.json', 'w') as f:
@@ -486,9 +589,9 @@ def refine():
     print("Processing complete. All spells have been updated with the 'can_immune' flag.")
 
 
-def scrape_images_synchronously():
-    """Scrape images for all NPCs synchronously using Selenium"""
-    print("\nStarting synchronous image scraping...")
+async def scrape_images_asynchronously(scraper: WoWScraper):
+    """Scrape images for all NPCs asynchronously using Selenium"""
+    print("\nStarting asynchronous image scraping...")
 
     # Load the refined instances.json file
     with open('instances.json', 'r', encoding='utf-8') as f:
@@ -500,62 +603,41 @@ def scrape_images_synchronously():
         dungeons = data.get('dungeons', {})
         data = {'instances': {'raids': raids, 'dungeons': dungeons}}
 
-    scraper = WoWScraper()
-    total_npcs = 0
-    processed_npcs = 0
-
-    # Count total NPCs
+    all_npcs = []
     for raid_data in data['instances']['raids'].values():
-        total_npcs += len(raid_data.get('npcs', []))
+        all_npcs.extend(raid_data.get('npcs', []))
     for dungeon_data in data['instances']['dungeons'].values():
-        total_npcs += len(dungeon_data.get('npcs', []))
+        all_npcs.extend(dungeon_data.get('npcs', []))
 
-    print(f"Found {total_npcs} NPCs to scrape images for...\n")
+    print(f"Found {len(all_npcs)} NPCs to scrape images for...\n")
 
-    # Scrape images for raids
-    for raid_name, raid_data in data['instances']['raids'].items():
-        print(f"Processing raid: {raid_name}")
-        if 'npcs' in raid_data:
-            for npc in raid_data['npcs']:
-                npc_id = npc.get('id')
-                npc_name = npc.get('name')
-                if npc_id:
-                    processed_npcs += 1
-                    print(f"  [{processed_npcs}/{total_npcs}] Scraping image for {npc_name} (ID: {npc_id})...")
-                    url = f"https://www.wowhead.com/npc={npc_id}"
-                    html_content = scraper._get_content_with_selenium_sync(url)
-                    image_url = scraper.parse_npc_image(html_content, npc_name)
-                    npc['image_url'] = image_url
-                    print(f"      Image URL: {image_url if image_url else 'Not found'}")
+    async with aiohttp.ClientSession() as session:
+        tasks = []
+        for npc in all_npcs:
+            tasks.append(scraper.scrape_npc_image(session, npc.get('id'), npc.get('name')))
 
-    # Scrape images for dungeons
-    for dungeon_name, dungeon_data in data['instances']['dungeons'].items():
-        print(f"Processing dungeon: {dungeon_name}")
-        if 'npcs' in dungeon_data:
-            for npc in dungeon_data['npcs']:
-                npc_id = npc.get('id')
-                npc_name = npc.get('name')
-                if npc_id:
-                    processed_npcs += 1
-                    print(f"  [{processed_npcs}/{total_npcs}] Scraping image for {npc_name} (ID: {npc_id})...")
-                    url = f"https://www.wowhead.com/npc={npc_id}"
-                    html_content = scraper._get_content_with_selenium_sync(url)
-                    image_url = scraper.parse_npc_image(html_content, npc_name)
-                    npc['image_url'] = image_url
-                    print(f"      Image URL: {image_url if image_url else 'Not found'}")
+        image_urls = await asyncio.gather(*tasks)
+
+        for npc, image_url in zip(all_npcs, image_urls):
+            npc['image_url'] = image_url
+            print(f"  Image for {npc['name']}: {image_url if image_url else 'Not found'}")
+
 
     # Save the updated data
     with open('instances.json', 'w', encoding='utf-8') as f:
         json.dump(data, f, indent=4, ensure_ascii=False)
 
-    print(f"\nImage scraping complete! Processed {processed_npcs} NPCs.")
+    print(f"\nImage scraping complete! Processed {len(all_npcs)} NPCs.")
 
 
 async def main_with_scrape():
     """Main entry point that optionally scrapes then refines"""
-    # await main()
-    # refine()
-    scrape_images_synchronously()
+    # With 16GB of RAM, running 5 concurrent browser instances is a safe starting point.
+    # You can increase this number if you find your system can handle it, or decrease it if you run into memory issues.
+    scraper = WoWScraper(max_concurrent_requests=5)
+    await main(scraper)
+    refine()
+    await scrape_images_asynchronously(scraper)
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description='Scrape and refine WoW instance data')

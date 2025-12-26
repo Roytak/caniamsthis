@@ -12,14 +12,6 @@
     *   [shadcn/ui](https://ui.shadcn.com/) - A collection of re-usable components built using Radix UI and Tailwind CSS.
     *   [pnpm](https://pnpm.io/) - Fast, disk space efficient package manager.
 
-*   **Backend:**
-    *   [FastAPI](https://fastapi.tiangolo.com/) - A modern, fast (high-performance), web framework for building APIs with Python 3.7+ based on standard Python type hints.
-    *   [Python](https://www.python.org/) - A high-level, general-purpose programming language.
-    *   [SQLAlchemy](https://www.sqlalchemy.org/) - The Python SQL Toolkit and Object Relational Mapper.
-    *   [Alembic](https://alembic.sqlalchemy.org/en/latest/) - A lightweight database migration tool for usage with the SQLAlchemy Database Toolkit for Python.
-    *   [PostgreSQL](https://www.postgresql.org/) - A powerful, open source object-relational database system.
-    *   [Poetry](https://python-poetry.org/) - A tool for dependency management and packaging in Python.
-
 ## Getting Started
 
 To get a local copy up and running, follow these simple steps.
@@ -28,9 +20,6 @@ To get a local copy up and running, follow these simple steps.
 
 *   [Node.js](https://nodejs.org/en/) (v18 or later)
 *   [pnpm](https://pnpm.io/installation)
-*   [Python](https://www.python.org/downloads/) (v3.10 or later)
-*   [Poetry](https://python-poetry.org/docs/#installation)
-*   [Docker](https://www.docker.com/products/docker-desktop/) (for running a local PostgreSQL database)
 
 ### Installation
 
@@ -41,51 +30,14 @@ To get a local copy up and running, follow these simple steps.
     cd caniamsthis
     ```
 
-2.  **Backend Setup:**
+2.  **Install dependencies:**
 
-    a. Navigate to the backend directory:
-    ```bash
-    cd packages/backend
-    ```
-
-    b. Install Python dependencies using Poetry:
-    ```bash
-    poetry install
-    ```
-
-    c. Start a PostgreSQL database using Docker:
-    ```bash
-    docker-compose up -d
-    ```
-
-    d. Run the database migrations:
-    ```bash
-    poetry run alembic upgrade head
-    ```
-
-    e. Populate the database with initial data:
-    ```bash
-    poetry run python -m src.populate_db
-    ```
-
-    f. Start the FastAPI backend server:
-    ```bash
-    poetry run uvicorn src.main:app --reload --port 8000
-    ```
-
-3.  **Frontend Setup:**
-
-    a. In a new terminal, navigate to the frontend directory:
-    ```bash
-    cd packages/frontend
-    ```
-
-    b. Install npm packages using pnpm:
     ```bash
     pnpm install
     ```
 
-    c. Start the Next.js development server:
+3.  **Start the development server:**
+
     ```bash
     pnpm dev
     ```
