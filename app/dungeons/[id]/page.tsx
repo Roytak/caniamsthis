@@ -4,7 +4,7 @@ import { PageHeader } from "@/components/page-header";
 import { getAllInstances, getDungeon } from "@/lib/instance-loader";
 
 interface DungeonPageProps {
-  params: { id: string };
+  params: Promise<{ id: string }>;
   searchParams: { filter?: string };
 }
 
@@ -15,8 +15,9 @@ export function generateStaticParams() {
   }));
 }
 
-export function generateMetadata({ params }: DungeonPageProps) {
-  const dungeon = getDungeon(params.id);
+export async function generateMetadata({ params }: DungeonPageProps) {
+  const resolvedParams = await params;
+  const dungeon = getDungeon(resolvedParams.id);
 
   if (!dungeon) {
     return {
@@ -30,9 +31,11 @@ export function generateMetadata({ params }: DungeonPageProps) {
   };
 }
 
-export default function DungeonPage({ params, searchParams }: DungeonPageProps) {
-  const dungeon = getDungeon(params.id);
-  const filter = searchParams.filter === 'trash' ? 'trash' : 'bosses';
+export default async function DungeonPage({ params, searchParams }: DungeonPageProps) {
+  const resolvedParams = await params;
+  const resolvedSearchParams = await searchParams;
+  const dungeon = getDungeon(resolvedParams.id);
+  const filter = resolvedSearchParams.filter === 'trash' ? 'trash' : 'bosses';
 
   if (!dungeon) {
     notFound();

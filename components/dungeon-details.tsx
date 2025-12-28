@@ -46,7 +46,7 @@ export function DungeonDetails({ dungeon, filter }: DungeonDetailsProps) {
             alt={dungeon.name}
             width={64}
             height={64}
-            className="rounded"
+            className="rounded w-16 h-16"
           />
           <div>
             <h1 className="text-3xl font-bold text-green-400">{dungeon.name}</h1>

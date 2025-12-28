@@ -41,7 +41,7 @@ export function RaidDetails({ raid }: RaidDetailsProps) {
             alt={raid.name}
             width={64}
             height={64}
-            className="rounded"
+            className="rounded w-16 h-16"
           />
           <div>
             <h1 className="text-3xl font-bold text-green-400">{raid.name}</h1>

@@ -39,10 +39,6 @@ export function DungeonsList({ dungeons }: { dungeons: Instance[] }) {
               </div>
             </CardHeader>
             <CardContent>
-              <p className="text-sm text-green-300/70 mb-4">
-                {dungeon.npcs.length} enemies with {dungeon.npcs.reduce((total, npc) => total + npc.spells.length, 0)}{" "}
-                spells
-              </p>
               <Link href={`/dungeons/${dungeon.id}`}>
                 <Button className="w-full bg-green-900/50 text-green-300 border border-green-700/50 hover:bg-green-800/50">
                   View Details

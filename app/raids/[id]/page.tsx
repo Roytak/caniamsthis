@@ -4,7 +4,7 @@ import { PageHeader } from "@/components/page-header";
 import { getAllInstances, getRaid } from "@/lib/instance-loader";
 
 interface RaidPageProps {
-  params: { id: string };
+  params: Promise<{ id: string }>;
 }
 
 export function generateStaticParams() {
@@ -14,8 +14,9 @@ export function generateStaticParams() {
   }));
 }
 
-export function generateMetadata({ params }: RaidPageProps) {
-  const raid = getRaid(params.id);
+export async function generateMetadata({ params }: RaidPageProps) {
+  const resolvedParams = await params;
+  const raid = getRaid(resolvedParams.id);
 
   if (!raid) {
     return {
@@ -29,8 +30,9 @@ export function generateMetadata({ params }: RaidPageProps) {
   };
 }
 
-export default function RaidPage({ params }: RaidPageProps) {
-  const raid = getRaid(params.id);
+export default async function RaidPage({ params }: RaidPageProps) {
+  const resolvedParams = await params;
+  const raid = getRaid(resolvedParams.id);
 
   if (!raid) {
     notFound();
