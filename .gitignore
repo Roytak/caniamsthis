@@ -36,7 +36,4 @@ yarn-error.log*
 *.zip
 
 # Scripts
-scripts/.venv/
-scripts/Lib/
-scripts/Scripts/
-scripts/pyvenv.cfg
+scripts/
