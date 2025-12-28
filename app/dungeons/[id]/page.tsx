@@ -1,6 +1,5 @@
 import { notFound } from "next/navigation";
 import { DungeonDetails } from "@/components/dungeon-details";
-import { PageHeader } from "@/components/page-header";
 import { getAllInstances, getDungeon } from "@/lib/instance-loader";
 
 interface DungeonPageProps {
@@ -42,11 +41,8 @@ export default async function DungeonPage({ params, searchParams }: DungeonPageP
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-gray-900 via-gray-800 to-black text-green-100">
-      <PageHeader />
-      <main className="container mx-auto px-4 py-8">
-        <DungeonDetails dungeon={dungeon} filter={filter} />
-      </main>
+    <div className="container mx-auto px-4 py-8">
+      <DungeonDetails dungeon={dungeon} filter={filter} />
     </div>
   );
 }

@@ -1,6 +1,5 @@
 import { notFound } from "next/navigation";
 import { RaidDetails } from "@/components/raid-details";
-import { PageHeader } from "@/components/page-header";
 import { getAllInstances, getRaid } from "@/lib/instance-loader";
 
 interface RaidPageProps {
@@ -39,11 +38,8 @@ export default async function RaidPage({ params }: RaidPageProps) {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-gray-900 via-gray-800 to-black text-green-100">
-      <PageHeader />
-      <main className="container mx-auto px-4 py-8">
-        <RaidDetails raid={raid} />
-      </main>
+    <div className="container mx-auto px-4 py-8">
+      <RaidDetails raid={raid} />
     </div>
   );
 }

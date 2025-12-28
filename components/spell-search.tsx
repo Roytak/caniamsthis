@@ -42,7 +42,7 @@ export function SpellSearch() {
 
   return (
     <>
-      <div className="relative max-w-md">
+      <div className="relative w-full">
         <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-green-400 h-4 w-4" />
         {isSearching && (
           <Loader2 className="absolute right-3 top-1/2 transform -translate-y-1/2 text-green-400 h-4 w-4 animate-spin" />
